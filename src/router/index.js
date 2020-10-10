@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ZhenBuChuo from '@/components/ZhenBuChuo'
+import HomePage from '@/components/HomePage'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'ZhenBuChuo',
-      component: ZhenBuChuo
+      name: 'HomePage',
+      component: HomePage
     }
   ]
 })
