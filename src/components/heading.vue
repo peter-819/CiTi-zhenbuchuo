@@ -1,5 +1,8 @@
 <template>
-<div id="rectangle"></div>
+<div id="rectangle">
+  <div id="logo">名字logo</div>
+</div>
+
 </template>
 
 <script>
@@ -20,5 +23,9 @@
     height: 74px;
     background: #707070;
     opacity: 0.45;
+    position: absolute;
+  }
+  #logo{
+
   }
 </style>
