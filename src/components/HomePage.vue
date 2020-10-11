@@ -14,6 +14,7 @@
 <script>
   import heading from "./heading";
   import introContext from "./introContext";
+  import bottom from "./bottom";
   export default {
     name: "HomePage",
     components:{
