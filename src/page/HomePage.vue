@@ -28,7 +28,7 @@
 
 <style>
  .block{
-   width: 1920px;
+   width: 100%;
    height: 927px;
    background: #29282D;
    opacity: 1;
@@ -36,7 +36,7 @@
  .introContexts{
    display: flex;
    -webkit-flex-direction: row;
-   width: 1920px;
+   width: 100%;
    margin-left: 96px;
    margin-top: 222px;
  }
