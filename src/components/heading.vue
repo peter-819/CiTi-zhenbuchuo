@@ -34,8 +34,7 @@
   .rectangle{
     width: 100%;
     height: 74px;
-    background: rgba(112,112,112,0.45);
-    position: absolute;
+    background: #49484B;
   }
   .HeaderComponent{
     font-size: 26px;
