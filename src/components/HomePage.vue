@@ -33,7 +33,7 @@
  .introContexts{
    display: flex;
    -webkit-flex-direction: row;
-   width: 1823px;
+   width: 1920px;
    margin-left: 96px;
    margin-top: 222px;
  }
