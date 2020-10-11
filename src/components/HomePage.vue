@@ -7,6 +7,7 @@
       <intro-context class="context2"></intro-context>
       <intro-context class="context2"></intro-context>
     </div>
+    <div><bottom></bottom></div>
   </div>
 
 </template>
@@ -19,7 +20,8 @@
     name: "HomePage",
     components:{
       heading,
-      introContext
+      introContext,
+      bottom
     }
   }
 </script>
@@ -46,4 +48,3 @@
  }
 
 </style>
-

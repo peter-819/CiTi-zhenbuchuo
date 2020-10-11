@@ -16,6 +16,7 @@
         <el-col :span="6"><div class="second">联系我们</div></el-col>
         <el-col :span="12"><div class="second"></div></el-col>
       </el-row>
+      <div class="state">版权声明</div>
     </div>
   </div>
 
@@ -26,7 +27,7 @@
     name:"bottom",
     data(){
       return{
-  
+
       };
     }
   }
@@ -34,7 +35,7 @@
 
 <style>
   .contain{
-    margin-top: 50px;
+    margin-top: 60px;
   }
   .el-row {
       margin-bottom: 20px;
@@ -50,11 +51,26 @@
     opacity: 1;
   }
   .first{
-    font-size: 16rem;
+    font-size: 18px;
     height: 30px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
   }
   .second{
-    font-size: 16rem;
+    font-size: 15px;
+    font-weight: 200;
+    color:#FFFFFF;
+    text-align: center;
+    line-height: 30px;
+  }
+  .state{
+    margin-top: 75px;
+    width: 100%;
     height: 30px;
+    color:#FFFFFF;
+    font-weight: 100;
+    text-align: center;
+    line-height: 30px;
   }
 </style>
