@@ -13,9 +13,9 @@
 </template>
 
 <script>
-  import heading from "./heading";
-  import introContext from "./introContext";
-  import bottom from "./bottom";
+  import heading from "../components/heading.vue";
+  import introContext from "../components/introContext.vue";
+  import bottom from "../components/bottom.vue";
   export default {
     name: "HomePage",
     components:{
