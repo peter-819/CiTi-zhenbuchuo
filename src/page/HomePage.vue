@@ -26,15 +26,13 @@
     <div>
       <h1 class="TitleFont">系统特点</h1>
       <div style="display:flex; justify-content:center;">
-        <img src="/static/HomePage/Polygon1.png" style="width:29px;height:14px;color:#F5F6FA;"></img>
+        <img src="/static/HomePage/Polygon1.png" style="width:29px;height:14px;color:#F5F6FA;"/>
       </div>
-      <div class="introContexts">
-        <intro-context class="context" :contents="context1"></intro-context>
-        <intro-context class="context" :contents="context1"></intro-context>
-        <intro-context class="context" :contents="context1"></intro-context>
-        <!-- <intro-context class="context2"></intro-context>
-        <intro-context class="context2"></intro-context> -->
-      </div>
+      <el-row class="introContexts">
+        <el-col :span="8" style="display: flex;align-items: center;justify-content: center;"><intro-context class="context" :contents="context1"></intro-context></el-col>
+        <el-col :span="8" style="display: flex;align-items: center;justify-content: center;"><intro-context class="context" :contents="context1"></intro-context></el-col>
+        <el-col :span="8" style="display: flex;align-items: center;justify-content: center;"><intro-context class="context" :contents="context1"></intro-context></el-col>
+      </el-row>
     </div>
     <div>
       <bottom></bottom>
