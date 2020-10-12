@@ -11,6 +11,11 @@
       <img src="/static/HomePage/oval.png">
       <img src="/static/HomePage/oval1.png" style="margin-top: 20px">
     </div>
+    <div
+      style="width: 137px;height: 30px;border: 3px solid #2CB8B9;border-radius: 10px;background: none;display: flex;
+      align-items: center;justify-content: center;color: #2CB8B9;font-size: 18px;letter-spacing: 4px;margin-left: -100px;margin-top: 600px">
+      更多新闻
+    </div>
   </div>
 </template>
 
