@@ -1,7 +1,10 @@
 <template>
   <div id="HomePage">
     <div><heading></heading></div>
-    <div class="block"></div>
+    <div class="block">
+      <div class="img1container"><img class="img1" src="/static/HomePage/hleft.png"></img></div>
+      <div class="img2container"><img class="img2" src="/static/HomePage/hrightup.png"></img></div>
+    </div>
       <div>
         <h1 class="TitleFont">系统特点</h1>
         <div style="display:flex; justify-content:center;">
@@ -44,9 +47,30 @@
 <style>
  .block{
    width: 100%;
-   height: 927px;
+   height: 800px;
    background: #29282D;
    opacity: 1;
+ }
+ .img1container{
+   margin-left: 20px;
+   width:41%;
+   height:100%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+
+ }
+ .img1{
+      max-width:100%;
+      height:auto;
+ }
+ .img2container{
+   margin-top: -74px;
+   width:39%;
+   height:40%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
  }
  .introContexts{
    width: 100%;
