@@ -43,7 +43,7 @@
         <news :news = "context2"></news>
       </div>
     </div>
-    <div><bottom></bottom></div>
+    <div style="margin-top: 147px"><bottom></bottom></div>
   </div>
 
 </template>
@@ -93,36 +93,6 @@
 </script>
 
 <style>
-  .block {
-    width: 100%;
-    height: 800px;
-    background: #29282D;
-    opacity: 1;
-  }
-
-  .img1container {
-    margin-left: 20px;
-    width: 41%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-  }
-
-  .img1 {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .img2container {
-    margin-top: -74px;
-    width: 39%;
-    height: 40%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
 
   .introContexts {
     display: flex;
@@ -143,7 +113,6 @@
     font-weight: 400;
     line-height: 75px;
     color: #29282D;
-    letter-spacing: 40;
     opacity: 1;
     text-align: center;
   }
