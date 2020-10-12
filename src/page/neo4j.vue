@@ -36,14 +36,7 @@
       }
     },
     initial_cypher: "MATCH (n)-[r:INTERACTS]->(m) RETURN n,r,m"
-  };
-  module.then(
-    Neovis => {
-      viz = new Neovis.default(config);
-      viz.render();
-      console.log(viz);
-    }
-  )
+  }
 
   export default {
     name: "neo4j",
@@ -67,8 +60,14 @@
         viz.stabilize();
       }
     },
-    beforeMount() {
-
+    beforeCreate() {
+      module.then(
+        Neovis => {
+          viz = new Neovis.default(config);
+          viz.render();
+          console.log(viz);
+        }
+      )
     }
   }
 </script>

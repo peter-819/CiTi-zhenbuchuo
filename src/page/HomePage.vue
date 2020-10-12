@@ -1,13 +1,31 @@
 <template>
   <div id="HomePage">
-    <div><heading></heading></div>
-    <div class="block">
-      <div class="img1container"><img class="img1" src="/static/HomePage/hleft.png"></img></div>
-      <div class="img2container"><img class="img2" src="/static/HomePage/hrightup.png"></img></div>
+    <div
+      style="width: 100%;height: 927px;background-color: #29282D;display: flex;flex-direction: column;align-items: center;justify-content: center">
+      <heading style="position: absolute;top: 0"></heading>
+      <img src="static/HomePage/hleft.png" style="width: 40vw;position: absolute;left: 1vw;top: 246px;">
+      <img src="static/HomePage/hrightup.png" style="width: 35vw;position: absolute;right: 2vw;top: 0;">
+      <img src="static/HomePage/hrightdown.png" style="width: 30vw;position: absolute;right: 0;bottom: 59px;">
+
+      <div style="text-align: center">
+        <p style="color: #FFFFFF;font-size: 56px;font-weight: 400;letter-spacing: 10px;opacity: 0.9;">这里是我们的Slogan</p>
+        <p style="color: #FFFFFF;font-size: 30px;font-weight: 400;letter-spacing: 5px;opacity: 0.65;margin-top: 36px;">
+          后疫情时代中小企业信贷系统</p>
+      </div>
+
+      <div
+        style="position: absolute;bottom: 100px;display: flex;align-items: center;justify-content: center;flex-direction: column;">
+        <div
+          style="width: 233px;height: 63px;border: 3px solid #2CB8B9;border-radius: 10px;background: none;display: flex;align-items: center;justify-content: center;color: #2CB8B9;font-size: 24px;letter-spacing: 8px;">
+          LOGIN
+        </div>
+        <img style="width: 59px;height: 27px;margin-top: 44px" src="static/HomePage/arrow_down.png"/>
+      </div>
     </div>
-      <div>
-        <h1 class="TitleFont">系统特点</h1>
-        <div style="display:flex; justify-content:center;">
+
+    <div>
+      <h1 class="TitleFont">系统特点</h1>
+      <div style="display:flex; justify-content:center;">
         <img src="/static/HomePage/Polygon1.png" style="width:29px;height:14px;color:#F5F6FA;"></img>
       </div>
       <div class="introContexts">
@@ -18,7 +36,9 @@
         <intro-context class="context2"></intro-context> -->
       </div>
     </div>
-    <div><bottom></bottom></div>
+    <div>
+      <bottom></bottom>
+    </div>
   </div>
 
 </template>
@@ -27,18 +47,19 @@
   import heading from "../components/heading.vue";
   import introContext from "../components/introContext.vue";
   import bottom from "../components/bottom.vue";
+
   export default {
     name: "HomePage",
-    data(){
-      return{
-        context1:{
-          Title:'技术亮点',
-          Content:'这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容<br>',
-          ImageSrc:'/static/HomePage/Bulb.png'
+    data() {
+      return {
+        context1: {
+          Title: '技术亮点',
+          Content: '这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容<br>',
+          ImageSrc: '/static/HomePage/Bulb.png'
         }
       }
     },
-    components:{
+    components: {
       heading,
       introContext,
       bottom
@@ -47,45 +68,49 @@
 </script>
 
 <style>
- .block{
-   width: 100%;
-   height: 800px;
-   background: #29282D;
-   opacity: 1;
- }
- .img1container{
-   margin-left: 20px;
-   width:41%;
-   height:100%;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-
- }
- .img1{
-      max-width:100%;
-      height:auto;
- }
- .img2container{
-   margin-top: -74px;
-   width:39%;
-   height:40%;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
- }
- .introContexts{
-   display: flex;
-   -webkit-flex-direction: row;
-   width: 100%;
-   height: 1000px;
-   margin-left:49px;
-   margin-right:49px;
- }
- .context{
-   margin:98px 49px 98px 49px;
+  .block {
+    width: 100%;
+    height: 800px;
+    background: #29282D;
+    opacity: 1;
   }
-  .TitleFont{
+
+  .img1container {
+    margin-left: 20px;
+    width: 41%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+  .img1 {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .img2container {
+    margin-top: -74px;
+    width: 39%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .introContexts {
+    display: flex;
+    -webkit-flex-direction: row;
+    width: 100%;
+    height: 1000px;
+  }
+
+  .context {
+    margin: 98px 49px;
+  }
+
+  .TitleFont {
     font-size: 44px;
     font-family: Source Han Sans CN;
     font-weight: 400;
