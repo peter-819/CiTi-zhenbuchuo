@@ -35,8 +35,15 @@
       </el-row>
     </div>
     <div>
-      <bottom></bottom>
+      <h1 class="TitleFont">新闻政策</h1>
+      <div style="display:flex; justify-content:center;">
+        <img src="/static/HomePage/Polygon1.png" style="width:29px;height:14px;color:#2CB8B9;">
+      </div>
+      <div>
+        <news :news = "context2"></news>
+      </div>
     </div>
+    <div><bottom></bottom></div>
   </div>
 
 </template>
@@ -45,22 +52,42 @@
   import heading from "../components/heading.vue";
   import introContext from "../components/introContext.vue";
   import bottom from "../components/bottom.vue";
+  import News from "../components/news";
 
   export default {
     name: "HomePage",
-    data() {
-      return {
-        context1: {
-          Title: '技术亮点',
-          Content: '这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容<br>',
-          ImageSrc: '/static/HomePage/Bulb.png'
-        }
+    data(){
+      return{
+        context1:{
+          Title:'技术亮点',
+          Content:'这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容<br>',
+          ImageSrc:'/static/HomePage/Bulb.png'
+        },
+        context2:[
+          {
+            Title:'新闻标题',
+            Content: '这里放新闻或政策的内容简要介绍，简要介绍不要太长了不要太长了'
+          },
+          {
+            Title:'新闻标题',
+            Content: '这里放新闻或政策的内容简要介绍，简要介绍不要太长了不要太长了'
+          },
+          {
+            Title:'新闻标题',
+            Content: '这里放新闻或政策的内容简要介绍，简要介绍不要太长了不要太长了'
+          },
+          {
+            Title:'新闻标题',
+            Content: '这里放新闻或政策的内容简要介绍，简要介绍不要太长了不要太长了'
+          }
+          ]
       }
     },
     components: {
       heading,
       introContext,
-      bottom
+      bottom,
+      News
     }
   }
 </script>
