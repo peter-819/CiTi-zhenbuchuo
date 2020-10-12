@@ -33,7 +33,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .contain{
     margin-top: 60px;
   }

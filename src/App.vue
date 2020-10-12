@@ -19,6 +19,7 @@
 
 <style>
   #app {
+    overflow: hidden;
   }
 
   body {
