@@ -133,6 +133,8 @@
 
   .context {
     margin: 98px 49px;
+    width: 509px;
+    height:540px;
   }
 
   .TitleFont {
