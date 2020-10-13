@@ -2,7 +2,7 @@
     <div id="ClickCreditWithoutLogin">
       <div>
         <heading
-          style="background-color:#29282D;"
+          style="background-color:#49484B;"
           :activated="1">
         </heading>
       </div>
