@@ -2,7 +2,7 @@
   <div id="HomePage">
     <div
       style="width: 100%;height: 927px;background-color: #29282D;display: flex;flex-direction: column;align-items: center;justify-content: center">
-      <heading style="position: absolute;top: 0"></heading>
+      <heading style="position: absolute;top: 0" :activated="0"></heading>
       <img src="static/HomePage/hleft.png" style="width: 40vw;position: absolute;left: 1vw;top: 246px;">
       <img src="static/HomePage/hrightup.png" style="width: 35vw;position: absolute;right: 2vw;top: 0;">
       <img src="static/HomePage/hrightdown.png" style="width: 30vw;position: absolute;right: 0;bottom: 59px;">

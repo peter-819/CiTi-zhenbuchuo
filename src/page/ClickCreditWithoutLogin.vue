@@ -3,7 +3,7 @@
       <div>
         <heading
           style="background-color:#29282D;"
-          v-bind:my-val="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}">
+          :activated="1">
         </heading>
       </div>
       <div class="loginFirst" style="margin-top: 160px;">请先登陆 / 注册以查看更多</div>

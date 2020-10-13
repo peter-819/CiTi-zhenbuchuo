@@ -2,7 +2,7 @@
   <div class="rectangle">
     <el-row>
       <el-col v-for="(item,index) in cols" :span="item.span" :offset="item.offset" :key="index">
-        <div class="HeaderComponent" :style="item.sty" @click="item.func()">
+        <div class="HeaderComponent" :class="item.class" @click="item.func()">
           {{item.context}}
           <img v-if="item.src!=null" :src="item.src">
         </div>
@@ -17,29 +17,34 @@
       let this_ = this
       return {
         cols: [
-          {span: "2", context: "名字", offset: "1", sty: "font-size: 20px; opacity:0.9;"},
-          {span: "2", context: "首页", offset: "9", sty: "font-weight:500; color: #2CB8B9;"},
+          {span: "2", context: "名字", offset: "1"},
+          {span: "2", context: "首页", offset: "9"},
           {
             span: "3", context: "借贷业务", func: function () {
               this_.$router.push({path: '/ClickCreditWithoutLogin'})
             }
           },
           {span: "2", context: "新闻"},
-          {span: "2", src: "./static/HomePage/message.png", offset: "2", sty: "margin-top:8px;"},
-          {span: "1", src: "./static/HomePage/admin.png", sty: "margin-top:8px;"},
+          {span: "2", src: "./static/HomePage/message.png", offset: "2"},
+          {span: "1", src: "./static/HomePage/admin.png"},
 
         ]
       };
     },
     props: {
-      myVal: {
-        type: Object,
-        default: null,
+      activated: {
+        type: Number,
+        default: 0,
       }
     },
-    mounted() {
-      this.cols[2].sty = this.myVal.sty1
-      this.cols[1].sty = this.myVal.sty2
+    created() {
+      this.cols.forEach(col => {
+        if (this.cols.indexOf(col) === this.activated + 1) {
+          col['class'] = "activated"
+        } else {
+          col['class'] = ""
+        }
+      })
     },
   }
 
@@ -49,7 +54,7 @@
   .rectangle {
     width: 100%;
     height: 74px;
-    background-color: rgba(112,112,112,0.45);
+    background-color: rgba(112, 112, 112, 0.45);
   }
 
   .HeaderComponent {
@@ -58,5 +63,9 @@
     font-weight: 400;
     line-height: 74px;
     color: #FFFFFF;
+  }
+
+  .activated {
+    color: #2CB8B9;
   }
 </style>
