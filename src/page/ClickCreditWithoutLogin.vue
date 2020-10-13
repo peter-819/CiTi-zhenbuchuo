@@ -6,7 +6,10 @@
           v-bind:my-val="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}">
         </heading>
       </div>
-      <div class="loginFirst">请先登陆 / 注册以查看更多</div>
+      <div class="loginFirst" style="margin-top: 160px;">请先登陆 / 注册以查看更多</div>
+      <div class ="reminder" style="margin-top: 50px">
+        <img src="/static/ClickCreditWithoutLogin/undraw_reminder_pa79.png" style="width: 650px;height: 520px;">
+      </div>
     </div>
 </template>
 
@@ -20,14 +23,24 @@
   }
 </script>
 
-<style scoped>
+<style>
   .loginFirst{
-    width: 309px;
-    height: 25px;
-    font-size: 24px;
+    width: 100%;
+    height: 50px;
+    font-size: 22px;
     font-family: Source Han Sans CN;
     font-weight: 400;
     line-height: 41px;
     color: #2CB8B9;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+  .reminder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 </style>
