@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HomePage from '../page/HomePage'
 import neo4j from "../page/neo4j";
 import ClickCreditWithoutLogin from "../page/ClickCreditWithoutLogin";
+import signup from "../page/signup1";
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/ClickCreditWithoutLogin',
       name: 'ClickCreditWithoutLogin',
       component: ClickCreditWithoutLogin
+    },
+    {
+      path: '/signup1',
+      name: 'signup1',
+      component: signup1
     }
   ]
 })
