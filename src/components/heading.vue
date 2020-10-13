@@ -21,7 +21,7 @@
           {span: "2", context: "首页", offset: "9", sty: "font-weight:500; color: #2CB8B9;"},
           {
             span: "3", context: "借贷业务", func: function () {
-              this_.$router.push({path: '/neo4j'})
+              this_.$router.push({path: '/ClickCreditWithoutLogin'})
             }
           },
           {span: "2", context: "新闻"},
@@ -30,6 +30,16 @@
 
         ]
       };
+    },
+    props: {
+      myVal: {
+        type: Object,
+        default: null,
+      }
+    },
+    mounted() {
+      this.cols[2].sty = this.myVal.sty1
+      this.cols[1].sty = this.myVal.sty2
     },
   }
 
