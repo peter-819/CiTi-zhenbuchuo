@@ -14,7 +14,7 @@
       </div>
 
       <div
-        style="position: absolute;bottom: 100px;display: flex;align-items: center;justify-content: center;flex-direction: column;">
+        style="margin-top: 120px;display: flex;align-items: center;justify-content: center;flex-direction: column;">
         <div
           style="width: 233px;height: 63px;border: 3px solid #2CB8B9;border-radius: 10px;background: none;display: flex;align-items: center;justify-content: center;color: #2CB8B9;font-size: 24px;letter-spacing: 8px;">
           LOGIN
