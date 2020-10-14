@@ -7,40 +7,55 @@
         <div class="progress">
           <img src="../../static/signup/bpoint.png" class="point"></img>
           <img src="../../static/signup/bline.png" class="line"></img>
-          <img src="../../static/signup/gpoint.png" class="point"></img>
+          <img src="../../static/signup/bpoint.png" class="point"></img>
           <img src="../../static/signup/gline.png" class="line"> </img>
           <img src="../../static/signup/gpoint.png" class="point"></img>
         </div>
         <div class="progress_name">
           <div class="text1">个人信息</div>
-          <div class="text2">企业信息</div>
+          <div class="text1">企业信息</div>
           <div class="text2">完成注册</div>
         </div>
         <div class="form1">
           <div class="hang1">
-            <div class="label1">姓名</div>
-            <el-input v-model="name" placeholder="请输入您的姓名" id="cinput"></el-input>
+            <div class="label1">企业名称</div>
+            <el-input v-model="name" placeholder="请输入企业名称" id="cinput"></el-input>
           </div>
           <img src="../../static/signup/xuxian.png"></img>
           <div class="hang1">
-            <div class="label1">邮箱</div>
+            <div class="label1">企业规模</div>
             <el-input v-model="email" placeholder="请输入您的邮箱" id="cinput"></el-input>
           </div>
           <img src="../../static/signup/xuxian.png"></img>
           <div class="hang1">
-            <div class="label1">联系电话</div>
-            <el-input v-model="tel" placeholder="请输入您的联系电话" id="cinput"></el-input>
+            <div class="label1">工商注册信息</div>
+            <el-input v-model="tel" placeholder="请输入工商注册信息" id="cinput"></el-input>
+          </div>
+          <div class="hang1">
+            <div class="label1">企业法人</div>
+            <el-input v-model="tel" placeholder="请输入企业法人代表" id="cinput"></el-input>
+          </div>
+          <div class="hang1">
+            <div class="label1">注册资本</div>
+            <el-input v-model="tel" placeholder="请输入企业注册资本" id="cinput"></el-input>
+          </div>
+          <div class="hang1">
+            <div class="label1">行业分类</div>
+            <el-input v-model="tel" placeholder="可点击右侧标识查看" id="cinput"></el-input>
+          </div>
+          <div class="hang1">
+            <div class="label1">公司地址</div>
+            <el-input v-model="tel" placeholder="请输入详细地址" id="cinput"></el-input>
+          </div>
+          <div class="hang1">
+            <div class="label1">企业联系电话</div>
+            <el-input v-model="tel" placeholder="请输入有效联系电话" id="cinput"></el-input>
           </div>
         </div>
 
         <div class="form2">
           <div class="hang2">
-            <div class="label2">上传身份证正面</div>
-            <img class="IDCard" src="../../static/signup/card.png"></img>
-          </div>
-          <img src="../../static/signup/xuxian.png"></img>
-          <div class="hang2">
-            <div class="label2">上传身份证反面</div>
+            <div class="label2">上传营业执照</div>
             <img class="IDCard" src="../../static/signup/card.png"></img>
           </div>
         </div>
@@ -56,12 +71,12 @@
 </template>
 
 <script>
-	import heading from "../components/heading.vue"
-	export default{
-		name :"signup1",
-		components: {
-		  heading,
-		},
+  import heading from "../components/heading.vue"
+  export default{
+  	name :"comsignup2",
+  	components: {
+  	  heading,
+  	},
     data() {
       return {
          name: '',
@@ -69,25 +84,25 @@
          tel:'',
       }
     },
-	}
+  }
 </script>
 
 <style>
-	.all{
-		display: flex;
-		flex-direction: column;
+  .all{
+  	display: flex;
+  	flex-direction: column;
     align-items: center;
-	}
-	.container1{
+  }
+  .container1{
     display: flex;
     flex-direction: column;
     align-items: center;
-		width: 75%;
-		height: 900px;
-		margin-top: 30px;
+  	width: 75%;
+  	height: 900px;
+  	margin-top: 30px;
     margin-bottom: 30px;
     background-color: #F5F6FA;
-	}
+  }
   .title{
     margin-top: 30px;
     font-size: 35px;
@@ -137,7 +152,7 @@
      flex-direction: column;
      align-items: center;
      width: 40%;
-     height: 190px;
+     height: 380px;
      margin-top: 45px;
      background-color: #FFFFFF;
    }
@@ -170,7 +185,7 @@
     flex-direction: column;
     align-items: center;
     width: 40%;
-    height: 325px;
+    height: 170px;
     margin-top: 20px;
     background-color: #FFFFFF;
   }

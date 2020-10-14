@@ -5,7 +5,8 @@ import neo4j from "../page/neo4j";
 
 import ClickCreditWithoutLogin from "../page/ClickCreditWithoutLogin";
 import CreditHomePage from "../page/CreditHomePage";
-import signup1 from "../page/signup1";
+import signup1 from "../page/comsignup1";
+import signup2 from "../page/comsignup2";
 
 Vue.use(Router)
 
@@ -32,9 +33,14 @@ export default new Router({
       component: ClickCreditWithoutLogin
     },
     {
-      path: '/signup1',
-      name: 'signup1',
-      component: signup1
+      path: '/comsignup1',
+      name: 'comsignup1',
+      component: comsignup1
+    },
+    {
+      path: '/comsignup2',
+      name: 'comsignup2',
+      component: comsignup2
     }
   ]
 })
