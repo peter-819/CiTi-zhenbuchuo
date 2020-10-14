@@ -3,9 +3,9 @@
     <div
       style="width: 100%;height: 927px;background-color: #29282D;display: flex;flex-direction: column;align-items: center;justify-content: center">
       <heading style="position: absolute;top: 0" :activated="0"></heading>
-      <img src="static/HomePage/hleft.png" style="width: 40vw;position: absolute;left: 1vw;top: 246px;">
-      <img src="static/HomePage/hrightup.png" style="width: 35vw;position: absolute;right: 2vw;top: 0;">
-      <img src="static/HomePage/hrightdown.png" style="width: 30vw;position: absolute;right: 0;bottom: 59px;">
+      <img src="static/HomePage/hrightup.png" style="width: 710px;height: 310px;top:0;right:30px;position: absolute;">
+      <img src="static/HomePage/hleft.png" style="width: 780px;height:500px;position: absolute;left: 17px;top: 246px;">
+      <img src="static/HomePage/hrightdown.png" style="width: 700px;height:450px;position: absolute;right: 0;top: 412px;">
 
       <div style="text-align: center">
         <p style="color: #FFFFFF;font-size: 56px;font-weight: 400;letter-spacing: 10px;opacity: 0.9;">这里是我们的Slogan</p>
