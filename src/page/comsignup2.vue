@@ -19,37 +19,48 @@
         <div class="form1">
           <div class="hang1">
             <div class="label1">企业名称</div>
-            <el-input v-model="name" placeholder="请输入企业名称" id="cinput"></el-input>
+            <el-input v-model="comname" placeholder="请输入企业名称" id="cinput"></el-input>
           </div>
-          <img src="../../static/signup/xuxian.png"></img>
+          <img src="../../static/signup/xuxian.png" style="z-index: 99;  width:85%"></img>
           <div class="hang1">
             <div class="label1">企业规模</div>
-            <el-input v-model="email" placeholder="请输入您的邮箱" id="cinput"></el-input>
+            <div class="icons">
+              <img src="../../static/signup/middle.png" class="icon" style="margin-left: 20px;"> </img>
+              <img src="../../static/signup/small.png" class="icon"> </img>
+              <img src="../../static/signup/xsmall.png" class="icon" style="margin-right: 80px;"> </img>
+              <img src="../../static/signup/question.png" class="icon" style=""></img>
+            </div>
           </div>
-          <img src="../../static/signup/xuxian.png"></img>
+          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
           <div class="hang1">
             <div class="label1">工商注册信息</div>
-            <el-input v-model="tel" placeholder="请输入工商注册信息" id="cinput"></el-input>
+            <el-input v-model="signinfo" placeholder="请输入工商注册信息" id="cinput"></el-input>
           </div>
+          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
           <div class="hang1">
             <div class="label1">企业法人</div>
-            <el-input v-model="tel" placeholder="请输入企业法人代表" id="cinput"></el-input>
+            <el-input v-model="legalperson" placeholder="请输入企业法人代表" id="cinput"></el-input>
           </div>
+          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
           <div class="hang1">
             <div class="label1">注册资本</div>
-            <el-input v-model="tel" placeholder="请输入企业注册资本" id="cinput"></el-input>
+            <el-input v-model="capital" placeholder="请输入企业注册资本" id="cinput"></el-input>
           </div>
+          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
           <div class="hang1">
-            <div class="label1">行业分类</div>
-            <el-input v-model="tel" placeholder="可点击右侧标识查看" id="cinput"></el-input>
+            <div class="label1" style="margin-right: -13px;">行业分类</div>
+            <el-input v-model="kind" placeholder="可点击右侧标识查看" id="cinput"></el-input>
+            <img src="../../static/signup/question.png"></img>
           </div>
+          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
           <div class="hang1">
             <div class="label1">公司地址</div>
-            <el-input v-model="tel" placeholder="请输入详细地址" id="cinput"></el-input>
+            <el-input v-model="comaddress" placeholder="请输入详细地址" id="cinput"></el-input>
           </div>
+          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
           <div class="hang1">
-            <div class="label1">企业联系电话</div>
-            <el-input v-model="tel" placeholder="请输入有效联系电话" id="cinput"></el-input>
+            <div class="label1">联系电话</div>
+            <el-input v-model="comtel" placeholder="请输入有效联系电话" id="cinput"></el-input>
           </div>
         </div>
 
@@ -79,9 +90,14 @@
   	},
     data() {
       return {
-         name: '',
-         email:'',
-         tel:'',
+         comname: '',
+         scale:'',
+         signinfo:'',
+         legalperson:'',
+         capital:'',
+         kind:'',
+         comaddress:'',
+         comtel:'',
       }
     },
   }
@@ -129,30 +145,32 @@
     align-items: center;
   }
   .text1{
-     width: 102px;
+     width: 170px;
      height: 24px;
      font-size: 24px;
      font-family: Source Han Sans CN;
      font-weight: 400;
      line-height: 41px;
      color: #2CB8B9;
+     text-align: center;
    }
    .text2{
-     width: 102px;
+     width: 170px;
      height: 24px;
-     margin-left: 100px;
      font-size: 24px;
+     margin-left: -1px;
      font-family: Source Han Sans CN;
      font-weight: 400;
      line-height: 41px;
      color: #CACBCD;
+     text-align: center;
    }
    .form1{
      display: flex;
      flex-direction: column;
      align-items: center;
      width: 40%;
-     height: 380px;
+     height: 400px;
      margin-top: 45px;
      background-color: #FFFFFF;
    }
@@ -166,7 +184,7 @@
      height:40px
    }
    .label1{
-     width: 160px;
+     width: 230px;
      font-size: 22px;
      margin-left: 50px;
      color: #707070;
@@ -179,6 +197,16 @@
      -webkit-appearance:none;
      -moz-appearance: none;
 
+   }
+   .icons{
+     width: 70%;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+   }
+   .icon{
+     margin-left: 10px;
+     margin-right: 10px;
    }
   .form2{
     display: flex;
