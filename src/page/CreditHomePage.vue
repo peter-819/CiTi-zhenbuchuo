@@ -1,87 +1,44 @@
 <template>
-    <div id="CreditHomePage">
-      <div>
-        <heading
-          style="background-color:#29282D;"
-          v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}">
-        </heading>
-      </div>
-      <div class="class">
-        <el-container>
-          <el-aside width="200px">Aside</el-aside>
-            <el-container>
-              <el-header>Header</el-header>
-              <el-main>Main</el-main>
-              <el-footer>Footer</el-footer>
-            </el-container>
-          </el-container>
-        </el-container>
-
-        <el-container>
-          <el-aside width="200px">Aside</el-aside>
-          <el-container>
-            <el-header>Header</el-header>
-            <el-main>Main</el-main>
-          </el-container>
-        </el-container>
-
-        <el-container>
-          <el-aside width="200px">Aside</el-aside>
-          <el-container>
-            <el-header>Header</el-header>
-            <el-main>Main</el-main>
-            <el-footer>Footer</el-footer>
-          </el-container>
-        </el-container>
-      </div>
-    </div>
+  <div id="CreditHomePage">
+    <heading
+      style="background-color:#29282D;"
+      v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}">
+    </heading>
+    <credit-aside></credit-aside>
+    <div class="presentCredit"></div>
+    <submit-contract style="margin-left: "></submit-contract>
+  </div>
 </template>
 
 <script>
   import heading from "../components/heading.vue";
+  import CreditAside from "../components/Credit/creditAside";
+  import submitContract from "../components/Credit/submitContract";
   export default {
     name: "CreditHomePage",
     components:{
-      heading
-    }
+      CreditAside,
+      heading,
+      submitContract,
+    },
+
   }
 </script>
 
 <style scoped>
-  .el-header, .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
-    line-height: 60px;
+  #CreditHomePage{
+    width: 100%;
+    height: 100%;
+    background-color: #F5F6FA;
+    /*position: fixed;*/
   }
-
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
+  .context1{
+    width: 192px;
+    height: 30px;
+    font-size: 30px;
+    font-family: Source Han Sans CN;
+    font-weight: 500;
+    line-height: 51px;
+    color: #FFFFFF;
   }
-
-  .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-  }
-
-  body > .el-container {
-    margin-bottom: 40px;
-  }
-
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
-  .class{
-
-  }
-</style>
+  </style>

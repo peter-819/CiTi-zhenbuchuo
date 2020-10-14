@@ -12,7 +12,7 @@ import comsignup3 from "../page/comsignup3";
 import banksignup1 from "../page/banksignup1";
 import banksignup2 from "../page/banksignup2";
 import logpop from "../components/logpop.vue";
-
+import submitContract from "../components/Credit/submitContract";
 
 Vue.use(Router)
 
@@ -72,7 +72,11 @@ export default new Router({
       path:'/logpop',
       name:'logpop',
       component: logpop
+    },
+    {
+      path: '/submitContract',
+      name:'submitContract',
+      component: submitContract
     }
-
   ]
 })
