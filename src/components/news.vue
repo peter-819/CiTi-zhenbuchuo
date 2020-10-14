@@ -44,7 +44,6 @@
     box-shadow: 0px 3px 6px rgba(112, 112, 112, 0.16);
     opacity: 1;
     border-radius: 15px;
-    margin-left: 5%;
     display: flex;
     flex-direction: row;
     align-items: center;

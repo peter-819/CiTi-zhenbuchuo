@@ -39,7 +39,7 @@
       <div style="display:flex; justify-content:center;">
         <img src="/static/HomePage/Polygon1.png" style="width:29px;height:14px;color:#2CB8B9;">
       </div>
-      <div>
+      <div style="display: flex;justify-content: center;">
         <news :news = "context2"></news>
       </div>
     </div>
