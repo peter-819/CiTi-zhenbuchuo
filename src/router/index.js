@@ -8,6 +8,7 @@ import CreditHomePage from "../page/CreditHomePage";
 import comsignup1 from "../page/comsignup1";
 import comsignup2 from "../page/comsignup2";
 import comsignup3 from "../page/comsignup3";
+import banksignup1 from "../page/banksignup1";
 
 Vue.use(Router)
 
@@ -47,6 +48,11 @@ export default new Router({
       path: '/comsignup3',
       name: 'comsignup3',
       component: comsignup3
-    }
+    },
+    {
+      path: '/banksignup1',
+      name: 'banksignup1',
+      component: banksignup1
+    },
   ]
 })
