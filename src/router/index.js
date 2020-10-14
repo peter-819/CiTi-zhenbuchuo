@@ -5,8 +5,8 @@ import neo4j from "../page/neo4j";
 
 import ClickCreditWithoutLogin from "../page/ClickCreditWithoutLogin";
 import CreditHomePage from "../page/CreditHomePage";
-import signup1 from "../page/comsignup1";
-import signup2 from "../page/comsignup2";
+import comsignup1 from "../page/comsignup1";
+import comsignup2 from "../page/comsignup2";
 
 Vue.use(Router)
 
