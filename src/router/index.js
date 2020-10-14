@@ -9,6 +9,7 @@ import comsignup1 from "../page/comsignup1";
 import comsignup2 from "../page/comsignup2";
 import comsignup3 from "../page/comsignup3";
 import banksignup1 from "../page/banksignup1";
+import banksignup2 from "../page/banksignup2";
 
 Vue.use(Router)
 
@@ -54,5 +55,10 @@ export default new Router({
       name: 'banksignup1',
       component: banksignup1
     },
+    {
+      path: '/banksignup2',
+      name: 'banksignup2',
+      component: banksignup2
+    }
   ]
 })
