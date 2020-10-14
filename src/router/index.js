@@ -11,6 +11,8 @@ import comsignup2 from "../page/comsignup2";
 import comsignup3 from "../page/comsignup3";
 import banksignup1 from "../page/banksignup1";
 import banksignup2 from "../page/banksignup2";
+import logpop from "../components/logpop.vue";
+
 
 Vue.use(Router)
 
@@ -65,6 +67,11 @@ export default new Router({
       path:'/charts',
       name:'charts',
       component: charts
+    },
+    {
+      path:'/logpop',
+      name:'logpop',
+      component: logpop
     }
 
   ]
