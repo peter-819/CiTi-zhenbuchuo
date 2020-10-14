@@ -87,6 +87,8 @@
 		margin-top: 30px;
     margin-bottom: 30px;
     background-color: #F5F6FA;
+    border:1px solid #2CB8B9;
+    border-radius: 15px;
 	}
   .title{
     margin-top: 30px;
