@@ -7,6 +7,7 @@ import ClickCreditWithoutLogin from "../page/ClickCreditWithoutLogin";
 import CreditHomePage from "../page/CreditHomePage";
 import comsignup1 from "../page/comsignup1";
 import comsignup2 from "../page/comsignup2";
+import charts from "../page/charts";
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/comsignup2',
       name: 'comsignup2',
       component: comsignup2
+    },
+    {
+      path:'/charts',
+      name:'charts',
+      component: charts
     }
   ]
 })
