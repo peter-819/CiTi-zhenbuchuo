@@ -4,9 +4,8 @@
       style="background-color:#29282D;"
       v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}">
     </heading>
-    <credit-aside></credit-aside>
-    <div class="presentCredit"></div>
-    <submit-contract style="margin-left: "></submit-contract>
+    <credit-aside v-model:selected="selected" @select="selectedIndexChange"></credit-aside>
+    <div :is="forms[selected]"></div>
   </div>
 </template>
 
@@ -14,14 +13,33 @@
   import heading from "../components/heading.vue";
   import CreditAside from "../components/Credit/creditAside";
   import submitContract from "../components/Credit/submitContract";
+  import creditStatus from "../components/Credit/creditStatus";
+  import submitContract2 from "../components/Credit/submitContract2";
+  import submitContract3 from "../components/Credit/submitContract3";
+  import submitContract4 from "../components/Credit/submitContract4";
+
   export default {
     name: "CreditHomePage",
     components:{
       CreditAside,
       heading,
       submitContract,
+      creditStatus,
+      submitContract2,
+      submitContract3,
+      submitContract4
     },
-
+    data(){
+      return{
+        selected:0,
+        forms:['creditStatus','submitContract','submitContract2','submitContract3','submitContract4']
+      }
+    },
+    methods:{
+      selectedIndexChange:function (index) {
+        this.selected = index;
+      }
+    }
   }
 </script>
 
@@ -30,7 +48,7 @@
     width: 100%;
     height: 100%;
     background-color: #F5F6FA;
-    /*position: fixed;*/
+    position: fixed;
   }
   .context1{
     width: 192px;

@@ -1,9 +1,9 @@
 <template>
   <div id="creditAside">
     <div>
-      <div v-for="(item,index) in blockList" :class="selected===index ? clickedBC : defaultBC" @click="selected = index">
+      <div v-for="(item,index) in blockList" :class="selectedIndex===index ? clickedBC : defaultBC" @click="onclicked(index)">
         <img :src="item.ImageSrc">
-        <div :class="selected===index ? clickedCC : defaultCC">{{item.context}}</div>
+        <div :class="selectedIndex===index ? clickedCC : defaultCC">{{item.context}}</div>
       </div>
     </div>
   </div>
@@ -12,9 +12,10 @@
 <script>
   export default {
     name: "creditAside",
+    props:['selected'],
     data(){
       return {
-        selected: 0,
+        selectedIndex:this.selected,
         clickedBC : 'clickedBlock',
         clickedCC : 'clickedContext',
         defaultBC : 'asideBlock',
@@ -27,11 +28,17 @@
           {context:'联系咨询', ImageSrc:'/static/CreditHomePage/pic87.png'}
         ]
       }
+    },
+    methods:{
+      onclicked:function(index){
+        this.$emit('select',index);
+        this.selectedIndex = index;
+      }
     }
   }
 </script>
 
-<style>
+<style scoped>
   #creditAside{
     width: 345px;
     height: 400px;
