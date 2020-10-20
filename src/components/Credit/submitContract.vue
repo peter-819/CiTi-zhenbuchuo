@@ -23,15 +23,14 @@
 
 <style scoped>
   #submitContract{
-
+    width: 100%;
+    height: 100%;
   }
  .contract{
    width: 1488px;
-   height: 863px;
-   position: absolute;
-   left: 372px;
-   top: 102px;
-   bottom: 150px;
+   height: 800px;
+   margin-left: 372px;
+   margin-top: 60px;;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -43,5 +42,9 @@
     height: 655px;
     background: #FFFFFF;
     border: 1px solid #707070;
+  }
+  .bg{
+    background-color: #F5F6FA;
+    position: fixed;
   }
 </style>

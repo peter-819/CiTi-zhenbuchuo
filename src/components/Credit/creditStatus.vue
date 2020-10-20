@@ -15,21 +15,33 @@
       <div class="tips">温馨提示：18万需在2021年8月30日前还清</div>
     </div>
     <div class="creditInfo">
-      <div style="display: flex;flex-direction: row;align-items: center;line-height: 51px;margin-top: 0;">
+      <div style="display: flex;flex-direction: row;align-items: center;line-height: 51px;margin-top: 0px;">
         <img src="/static/CreditHomePage/pic90.png">
         <div class="title" style="width: 257px">企业借贷机制资料</div>
       </div>
-      <div style="display: flex;flex-direction: row;justify-content: center;">
-        <div style="display: flex;flex-direction: column;align-items: center;">
-          <div v-for="value in infoList1">
-            {{+':'+value}}
-          </div>
-          <div style= "display: flex;flex-direction: column;align-items: center;">
-            <div v-for="(key,value) in infoList2">
-              {{key+':'+value}}
-            </div>
+      <div style="display: flex;flex-direction: row;justify-content: center;margin-top: 58px;">
+        <div style="display: flex;flex-direction:column;float: left;">
+          <div v-for="(item)  in infoList1" :Title="item.Title" :Content="item.Content">
+            <p><span class="detailTitle">{{item.Title}}</span>:<span class="detailInfo"> {{item.Content}}</span></p>
           </div>
         </div>
+        <div style= "display: flex;flex-direction:column;float: left;margin-left: 153px">
+          <div v-for="(item) in infoList2" :Title="item.Title" :Content="item.Content">
+            <p><span class="detailTitle" >{{item.Title}}</span>:<span class="detailInfo"> {{item.Content}}</span></p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;flex-direction: row;align-items: center;margin-top: 78px;">
+        <img src="/static/CreditHomePage/pic95.png">
+      </div>
+    </div>
+    <div class="socialWeb">
+      <div style="display: flex;flex-direction: row;justify-content:center;align-items: center;line-height: 51px;margin-top: -200px;">
+        <img src="/static/CreditHomePage/pic90.png">
+        <div class="title" style="width: fit-content">企业社会网络表现</div>
+      </div>
+      <div style="width: 484px;height: 30px;font-size: 30px;font-family: Source Han Sans CN;font-weight: 400;line-height: 51px;color: #2CB8B9;margin-top: 143px;">
+        （备注：社会网络展示放在此处）
       </div>
     </div>
   </div>
@@ -49,18 +61,42 @@
           customColor:'#2CB8B9',
           usedQuota:'18',
           quota:'30',
-          infoList1:{
-            firmName:'不错子有限公司',
-            firmSignInfo:'不错子有限公司',
-            signAsset:'130000',
-            firmAddr:'xx省xx市xx区',
-          },
-          infoList2:{
-            firmScale:'中',
-            artificialPerson:'不错子',
-            industryType:'农林业',
-            firmTele:'xxxxxxxxxxxxx'
-          }
+          infoList1:[
+            {
+              Title:'企业名称',
+              Content:'不错子有限公司'
+            },
+            {
+              Title:'企业工商注册信息',
+              Content: '不错子有限公司'
+            },
+            {
+              Title: '注册资本',
+              Content: '130000',
+            },
+            {
+              Title: '公司地址',
+              Content:'xx省xx市xx区'
+            }
+          ],
+          infoList2:[
+            {
+              Title:'企业规模',
+              Content:'中'
+            },
+            {
+              Title:'企业法人',
+              Content: '不错子'
+            },
+            {
+              Title: '行业分类',
+              Content: '农林业',
+            },
+            {
+              Title: '企业联系电话',
+              Content:'xxxxxxxxxxxxxxxx'
+            }
+          ],
         }
       }
     }
@@ -136,7 +172,7 @@
   }
   .creditInfo{
     width: 1488px;
-    height: 533px;
+    height: 500px;
     margin-top:23px;
     margin-left: 372px;
     background-color: #FFFFFF;
@@ -145,7 +181,7 @@
     justify-content: center;
     align-items: center;
   }
-  .detailInfo{
+  .detailTitle{
     width: 85px;
     height: 20px;
     font-size: 20px;
@@ -154,4 +190,26 @@
     line-height: 34px;
     color: #707070;
   }
+  .detailInfo{
+    width: 168px;
+    height: 24px;
+    font-size: 24px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    line-height: 41px;
+    color: #707070;
+  }
+  .socialWeb{
+    width: 1488px;
+    height: 512px;
+    background-color: #FFFFFF;
+    margin-top: 23px;
+    margin-left: 372px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="CreditHomePage">
+  <div id="CreditHomePage" class="bg">
     <heading
       style="background-color:#29282D;"
       v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}">
@@ -20,7 +20,7 @@
 
   export default {
     name: "CreditHomePage",
-    components:{
+    components: {
       CreditAside,
       heading,
       submitContract,
@@ -29,26 +29,25 @@
       submitContract3,
       submitContract4
     },
-    data(){
-      return{
-        selected:0,
-        forms:['creditStatus','submitContract','submitContract2','submitContract3','submitContract4']
+    data() {
+      return {
+        selected: 0,
+        forms: ['creditStatus', 'submitContract', 'submitContract2', 'submitContract3', 'submitContract4']
       }
     },
-    methods:{
-      selectedIndexChange:function (index) {
+    methods: {
+      selectedIndexChange: function (index) {
         this.selected = index;
       }
     }
   }
+
 </script>
 
 <style scoped>
   #CreditHomePage{
     width: 100%;
-    height: 100%;
-    background-color: #F5F6FA;
-    position: fixed;
+    height: auto;
   }
   .context1{
     width: 192px;
@@ -58,5 +57,8 @@
     font-weight: 500;
     line-height: 51px;
     color: #FFFFFF;
+  }
+  .bg{
+    background-color: #F5F6FA;
   }
   </style>
