@@ -20,6 +20,7 @@
     "echarts": "^4.9.0",
     "element-ui": "^2.13.2",
     "jquery": "^3.5.1",
+    "jwchat": "^0.2.48",
     "neovis.js": "^1.5.0",
     "scss-loader": "0.0.1",
     "vant": "^2.10.9",

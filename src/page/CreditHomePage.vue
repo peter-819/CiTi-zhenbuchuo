@@ -14,9 +14,9 @@
   import CreditAside from "../components/Credit/creditAside";
   import submitContract from "../components/Credit/submitContract";
   import creditStatus from "../components/Credit/creditStatus";
-  import submitContract2 from "../components/Credit/submitContract2";
-  import submitContract3 from "../components/Credit/submitContract3";
-  import submitContract4 from "../components/Credit/submitContract4";
+  import specificAccess from "../components/Credit/specificAccess";
+  import debitAccess from "../components/Credit/debitAccess";
+  import contact from "../components/Credit/contact";
 
   export default {
     name: "CreditHomePage",
@@ -25,14 +25,14 @@
       heading,
       submitContract,
       creditStatus,
-      submitContract2,
-      submitContract3,
-      submitContract4
+      specificAccess,
+      debitAccess,
+      contact
     },
     data() {
       return {
         selected: 0,
-        forms: ['creditStatus', 'submitContract', 'submitContract2', 'submitContract3', 'submitContract4']
+        forms: ['creditStatus', 'submitContract', 'specificAccess', 'debitAccess', 'contact']
       }
     },
     methods: {

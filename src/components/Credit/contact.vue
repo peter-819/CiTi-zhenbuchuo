@@ -1,21 +1,25 @@
 <template>
-  <div id="presentCredit4">
-
+  <div id="contact">
+    <JwChat-index
+      :taleList="list"
+      @enter="bindEnter"
+      v-model="inputMsg"
+      :toolConfig="tool"
+    />
   </div>
 </template>
 
 <script>
     export default {
-        name: "presentCredit4"
+        name: "contact"
     }
 </script>
 
 <style scoped>
-  #presentCredit4{
+  #contact{
     width: 1488px;
     height: 307px;
     margin-left: 372px;
     margin-top: 28px;
-    background-color: #F0F000;
   }
 </style>

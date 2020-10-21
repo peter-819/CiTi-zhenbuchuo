@@ -28,9 +28,9 @@
   }
  .contract{
    width: 1488px;
-   height: 800px;
-   margin-left: 372px;
-   margin-top: 60px;;
+   height: 840px;
+   margin-left: 394px;
+   margin-top: 28px;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -43,8 +43,5 @@
     background: #FFFFFF;
     border: 1px solid #707070;
   }
-  .bg{
-    background-color: #F5F6FA;
-    position: fixed;
-  }
+
 </style>

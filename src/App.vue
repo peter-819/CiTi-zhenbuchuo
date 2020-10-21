@@ -12,6 +12,10 @@
 
 
   Vue.use(ElementUI);
+
+  import Chat from 'jwchat'
+
+  Vue.use(Chat)
   export default {
     name: 'App'
   }
