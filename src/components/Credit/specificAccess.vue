@@ -12,7 +12,7 @@
       <div style="width: 224px;height: 30px;font-size: 30px;font-family: Source Han Sans CN;font-weight: 400;line-height: 30px;color: #707070;margin-left: 103px;margin-top: 40px;">
         添加声明：
       </div>
-      <input type="text" class="annotation"></input>
+      <textarea class="annotation" type="text" ></textarea>
       <img src="/static/CreditHomePage/pic147.png" style="margin-left: 648px;margin-top: 80px">
     </div>
   </div>
@@ -20,7 +20,8 @@
 
 <script>
     export default {
-        name: "specificAccess"
+      name: "specificAccess",
+
     }
 </script>
 
@@ -43,5 +44,8 @@
     border: 1px solid #707070;
     margin-top: 30px;
     margin-left: 103px;
+    font-size: 16px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
   }
 </style>
