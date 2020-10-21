@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><heading></heading></div>
+    <div><heading style="background-color: rgb(74,73,76);"></heading></div>
     <div class="all">
       <div class="container1">
         <div class="title">用户注册</div>
@@ -16,51 +16,14 @@
           <div class="text1">企业信息</div>
           <div class="text2">完成注册</div>
         </div>
+
         <div class="form1">
-          <div class="hang1">
-            <div class="label1">企业名称</div>
-            <el-input v-model="comname" placeholder="请输入企业名称" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png" style="z-index: 99;  width:85%"></img>
-          <div class="hang1">
-            <div class="label1">企业规模</div>
-            <div class="icons">
-              <img src="../../static/signup/middle.png" class="icon" style="margin-left: 20px;"> </img>
-              <img src="../../static/signup/small.png" class="icon"> </img>
-              <img src="../../static/signup/xsmall.png" class="icon" style="margin-right: 80px;"> </img>
-              <img src="../../static/signup/question.png" class="icon" style=""></img>
+          <div v-for="(item,index) in input" class="inputkuai" :key="index">
+            <div class="hang1">
+              <div class="label1">{{item.name}}</div>
+              <el-input v-model="item.modelname" :placeholder="item.ph" id="cinput"></el-input>
             </div>
-          </div>
-          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
-          <div class="hang1">
-            <div class="label1">工商注册信息</div>
-            <el-input v-model="signinfo" placeholder="请输入工商注册信息" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
-          <div class="hang1">
-            <div class="label1">企业法人</div>
-            <el-input v-model="legalperson" placeholder="请输入企业法人代表" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
-          <div class="hang1">
-            <div class="label1">注册资本</div>
-            <el-input v-model="capital" placeholder="请输入企业注册资本" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
-          <div class="hang1">
-            <div class="label1" style="margin-right: -13px;">行业分类</div>
-            <el-input v-model="kind" placeholder="可点击右侧标识查看" id="cinput"></el-input>
-            <img src="../../static/signup/question.png"></img>
-          </div>
-          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
-          <div class="hang1">
-            <div class="label1">公司地址</div>
-            <el-input v-model="comaddress" placeholder="请输入详细地址" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png" style="z-index: 99; width:85%"></img>
-          <div class="hang1">
-            <div class="label1">联系电话</div>
-            <el-input v-model="comtel" placeholder="请输入有效联系电话" id="cinput"></el-input>
+            <img src="../../static/signup/xuxian.png" width="85%"></img>
           </div>
         </div>
 
@@ -90,14 +53,26 @@
   	},
     data() {
       return {
-         comname: '',
-         scale:'',
-         signinfo:'',
-         legalperson:'',
-         capital:'',
-         kind:'',
-         comaddress:'',
-         comtel:'',
+        input:[
+          {name:"企业名称", modelname:"comname", ph:"请输入企业名称"},
+          {name:"企业规模", modelname:"scale", ph:"请输入企业规模"},
+          {name:"工商注册信息", modelname:"signinfo", ph:"请输入工商注册信息"},
+          {name:"企业法人", modelname:"legalperson", ph:"请输入企业法人"},
+          {name:"注册资本", modelname:"capital", ph:"请输入注册资本"},
+          {name:"行业分类", modelname:"kind", ph:"请输入行业分类"},
+          {name:"公司地址", modelname:"comaddress", ph:"请输入公司地址"},
+          {name:"公司电话", modelname:"comtel", ph:"请输入公司联系电话"},
+        ],
+        info:{
+          comname: '',
+          scale:'',
+          signinfo:'',
+          legalperson:'',
+          capital:'',
+          kind:'',
+          comaddress:'',
+          comtel:'',
+        }
       }
     },
   }
@@ -114,7 +89,7 @@
     flex-direction: column;
     align-items: center;
   	width: 75%;
-  	height: 900px;
+  	height: auto;
   	margin-top: 30px;
     margin-bottom: 30px;
     background-color: #F5F6FA;
@@ -172,9 +147,14 @@
      flex-direction: column;
      align-items: center;
      width: 40%;
-     height: 400px;
+     height: auto;
      margin-top: 45px;
      background-color: #FFFFFF;
+   }
+   .inputkuai{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
    }
    .hang1{
      display: flex;

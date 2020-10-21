@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><heading></heading></div>
+    <div><heading style="background-color: rgb(74,73,76);"></heading></div>
     <div class="all">
       <div class="container1">
         <div class="title">用户注册</div>
@@ -17,19 +17,12 @@
           <div class="text2">完成注册</div>
         </div>
         <div class="form1">
-          <div class="hang1">
-            <div class="label1">姓名</div>
-            <el-input v-model="name" placeholder="请输入您的姓名" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png"></img>
-          <div class="hang1">
-            <div class="label1">邮箱</div>
-            <el-input v-model="email" placeholder="请输入您的邮箱" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png"></img>
-          <div class="hang1">
-            <div class="label1">联系电话</div>
-            <el-input v-model="tel" placeholder="请输入您的联系电话" id="cinput"></el-input>
+          <div v-for="(item,index) in input" class="inputkuai" :key="index">
+            <div class="hang1">
+              <div class="label1">{{item.name}}</div>
+              <el-input v-model="item.modelname" :placeholder="item.name" id="cinput"></el-input>
+            </div>
+            <img src="../../static/signup/xuxian.png" width="85%"></img>
           </div>
         </div>
 
@@ -38,7 +31,7 @@
             <div class="label2">上传身份证正面</div>
             <img class="IDCard" src="../../static/signup/card.png"></img>
           </div>
-          <img src="../../static/signup/xuxian.png"></img>
+          <img src="../../static/signup/xuxian.png" width="85%"></img>
           <div class="hang2">
             <div class="label2">上传身份证反面</div>
             <img class="IDCard" src="../../static/signup/card.png"></img>
@@ -64,9 +57,16 @@
 		},
     data() {
       return {
-         name: '',
-         email:'',
-         tel:'',
+        input:[
+          {name:"姓名", modelname:"name", ph:"请输入您的姓名"},
+          {name:"邮箱", modelname:"email", ph:"请输入您的邮箱"},
+          {name:"联系电话", modelname:"tel", ph:"请输入您的联系电话"},
+        ],
+        info:{
+          name:"",
+          email:"",
+          tel:"",
+        }
       }
     },
 	}
@@ -139,9 +139,14 @@
      flex-direction: column;
      align-items: center;
      width: 40%;
-     height: 190px;
+     height: auto;
      margin-top: 45px;
      background-color: #FFFFFF;
+   }
+   .inputkuai{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
    }
    .hang1{
      display: flex;

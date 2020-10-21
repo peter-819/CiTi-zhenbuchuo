@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><heading></heading></div>
+    <div><heading style="background-color: rgb(74,73,76);"></heading></div>
     <div class="all">
       <div class="container1">
         <div class="title">用户注册</div>
@@ -14,40 +14,29 @@
           <div class="text1">个人信息</div>
           <div class="text2">完成注册</div>
         </div>
+
         <div class="form1">
-          <div class="hang1">
-            <div class="label1">姓名</div>
-            <el-input v-model="sname" placeholder="请输入您的姓名" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png"></img>
-          <div class="hang1">
-            <div class="label1">邮箱</div>
-            <el-input v-model="semail" placeholder="请输入您的邮箱" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png"></img>
-          <div class="hang1">
-            <div class="label1">联系电话</div>
-            <el-input v-model="stel" placeholder="请输入您的联系电话" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png"></img>
-          <div class="hang1">
-            <div class="label1">任职岗位</div>
-            <el-input v-model="sposition" placeholder="请输入您的任职岗位" id="cinput"></el-input>
+          <div v-for="(item,index) in input" class="inputkuai" :key="index">
+            <div class="hang1">
+              <div class="label1">{{item.name}}</div>
+              <el-input v-model="item.modelname" :placeholder="item.name" id="cinput"></el-input>
+            </div>
+            <img src="../../static/signup/xuxian.png" width="85%"></img>
           </div>
         </div>
-  
+
         <div class="form2">
           <div class="hang2">
             <div class="label2">上传工作证件</div>
             <img class="IDCard" src="../../static/signup/card.png"></img>
           </div>
         </div>
-  
+
         <div class="last">
           <img class="button" src="../../static/signup/last.png"></img>
           <img class="button" src="../../static/signup/next.png"></img>
         </div>
-  
+
       </div>
     </div>
   </div>
@@ -62,10 +51,18 @@
   	},
     data() {
       return {
+        input:[
+          {name:"姓名", modelname:"sname", ph:"请输入您的姓名"},
+          {name:"邮箱", modelname:"semail", ph:"请输入您的邮箱"},
+          {name:"联系电话", modelname:"stel", ph:"请输入您的联系电话"},
+          {name:"任职岗位", modelname:"sposition", ph:"请输入您的工作岗位"},
+        ],
+        info:{
          sname: '',
          semail:'',
          stel:'',
          sposition:'',
+         }
       }
     },
   }
@@ -138,7 +135,7 @@
      flex-direction: column;
      align-items: center;
      width: 40%;
-     height: 230px;
+     height: auto;
      margin-top: 45px;
      background-color: #FFFFFF;
    }
@@ -164,7 +161,7 @@
      border: #FFFFFF;
      -webkit-appearance:none;
      -moz-appearance: none;
-  
+
    }
   .form2{
     display: flex;

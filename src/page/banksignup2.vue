@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><heading></heading></div>
+    <div><heading style="background-color: rgb(74,73,76);"></heading></div>
     <div class="all">
       <div class="container1">
         <div class="title">用户注册</div>

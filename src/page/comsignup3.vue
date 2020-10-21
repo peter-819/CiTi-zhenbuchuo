@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><heading></heading></div>
+    <div><heading style="background-color: rgb(74,73,76);"></heading></div>
     <div class="all">
       <div class="container1">
         <div class="title">用户注册</div>
@@ -16,15 +16,14 @@
           <div class="text" style="margin-right: 100px;">企业信息</div>
           <div class="text">完成注册</div>
         </div>
+
         <div class="form1">
-          <div class="hang1">
-            <div class="label1">设置密码</div>
-            <el-input v-model="password1" placeholder="请输入密码" id="cinput"></el-input>
-          </div>
-          <img src="../../static/signup/xuxian.png"></img>
-          <div class="hang1">
-            <div class="label1">确认密码</div>
-            <el-input v-model="password2" placeholder="请输入密码" id="cinput"></el-input>
+          <div v-for="(item,index) in input" class="inputkuai" :key="index">
+            <div class="hang1">
+              <div class="label1">{{item.name}}</div>
+              <el-input v-model="item.modelname" :placeholder="item.name" id="cinput"></el-input>
+            </div>
+            <img src="../../static/signup/xuxian.png" width="85%"></img>
           </div>
         </div>
 
@@ -47,8 +46,14 @@
   		},
       data() {
         return {
-          password1:'',
-          password2:'',
+          input:[
+            {name:"设置密码", modelname:"password1", ph:"请输入密码"},
+            {name:"确认密码", modelname:"password2", ph:"请输入密码"},
+          ],
+          info:{
+            password1:'',
+            password2:'',}
+
         }
       },
   	}
@@ -111,9 +116,14 @@
      flex-direction: column;
      align-items: center;
      width: 40%;
-     height: 137px;
+     height: auto;
      margin-top: 45px;
      background-color: #FFFFFF;
+   }
+   .inputkuai{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
    }
    .hang1{
      display: flex;
