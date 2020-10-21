@@ -1,7 +1,7 @@
 <template>
   <div id="CreditHomePage" class="bg">
     <heading
-      style="background-color:#29282D;"
+      style="background-color:#49484B;"
       v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}">
     </heading>
     <credit-aside v-model:selected="selected" @select="selectedIndexChange"></credit-aside>
