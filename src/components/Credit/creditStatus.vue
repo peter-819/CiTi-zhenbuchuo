@@ -107,16 +107,14 @@
 
 <style scoped>
   #creditStatus{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
   }
 
   .presentCredit{
     width: 1488px;
     height: 307px;
-    margin-left: 372px;
+    margin-left: 394px;
     margin-top:28px;
     background-color: #FFFFFF;
     display: flex;
@@ -177,7 +175,7 @@
     width: 1488px;
     height: 500px;
     margin-top:23px;
-    margin-left: 372px;
+    margin-left: 394px;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -207,7 +205,7 @@
     height: 512px;
     background-color: #FFFFFF;
     margin-top: 23px;
-    margin-left: 372px;
+    margin-left: 394px;
     display: flex;
     flex-direction: column;
     justify-content: center;

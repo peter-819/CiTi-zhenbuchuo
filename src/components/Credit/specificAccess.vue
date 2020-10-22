@@ -8,11 +8,32 @@
       <div style="width: 224px;height: 30px;font-size: 30px;font-family: Source Han Sans CN;font-weight: 400;line-height: 30px;color: #707070;margin-left: 103px;margin-top: 40px;">
         上传记录证明：
       </div>
-      <img src="/static/CreditHomePage/pic160.png" style="margin-left: 291px;margin-top: 46px">
+      <el-upload
+        style="margin-left:103px;margin-top: 23px;"
+        drag
+        action="https://jsonplaceholder.typicode.com/posts/"
+        multiple
+        :file-list = "fileList"
+        :on-change="(file, fileList) => {handleChange(file, fileList)}"
+        :on-success="handleSuccess"
+        :before-upload="beforeUpload">
+        <i class="el-icon-upload"></i>
+        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+        <div class="el-upload__tip" slot="tip">只能上传jpg/png/pdf文件，且不超过10MB</div>
+      </el-upload>
       <div style="width: 224px;height: 30px;font-size: 30px;font-family: Source Han Sans CN;font-weight: 400;line-height: 30px;color: #707070;margin-left: 103px;margin-top: 40px;">
         添加声明：
       </div>
-      <textarea class="annotation" type="text" ></textarea>
+      <el-input
+        class="annotation"
+        action="https://jsonplaceholder.typicode.com/posts/"
+        type="textarea"
+        :autosize="{ minRows: 6, maxRows: 6}"
+        placeholder="请输入内容"
+        v-model="textarea2"
+        maxlength="500"
+        show-word-limit>
+      </el-input>
       <img src="/static/CreditHomePage/pic147.png" style="margin-left: 648px;margin-top: 80px">
     </div>
   </div>
@@ -21,7 +42,50 @@
 <script>
     export default {
       name: "specificAccess",
+      methods:{
+        handleSuccess(res, file) {
+          this.url = URL.createObjectURL(file.raw);
+        },
+        beforeUpload(file){
+          const isJPG = file.type === 'image/jpg';
+          const isPNG = file.type === 'image/png';
+          const isPDF = file.type === 'text/pdf'
+          const isLt10M = file.size / 1024 / 1024 < 10;
 
+          if (!isJPG & !isPNG && !isPDF) {
+            this.$message.error('请上传正确格式的文件');
+          }
+          if (!isLt10M) {
+            this.$message.error('上传文件大小不能超过10MB!');
+          }
+          return (isJPG || isPDF || isPNG) && isLt10M;
+        },
+        handleChange(file, fileList){
+          // 判断file是否是新增
+          let isExist = false;
+          isExist = this.fileList.some(item => {
+            if(item.name == file.name)
+              return true;
+          });
+          if(!isExist) {
+            // 如果已经存在
+            fileList.some((item, index) => {
+              if(item.uid == file.uid) {
+                fileList.splice(index, 1);
+                return true;
+              }
+            });
+            this.$message.error(`已经存在文件${file.name}, 请勿重复上传`);
+            return false;
+          }
+        },
+      },
+
+      data(){
+        return{
+          textarea2:''
+        }
+      }
     }
 </script>
 
@@ -37,14 +101,13 @@
     margin-left: 394px;
     margin-top: 28px;
   }
-  .annotation{
+  .annotation {
     width: 1282px;
     height: 149px;
     background: #FFFFFF;
-    border: 1px solid #707070;
     margin-top: 30px;
     margin-left: 103px;
-    font-size: 16px;
+    font-size: 18px;
     font-family: Source Han Sans CN;
     font-weight: 400;
   }
