@@ -1,18 +1,19 @@
 <template>
   <div id="creditStatus">
     <div class="presentCredit">
-      <div style="display: flex;flex-direction: row;align-items: center;line-height: 51px;margin-top: 0px;">
+      <div style="display: flex;flex-direction: row;align-items: center;line-height: 51px;margin-top: 20px;">
         <img src="/static/CreditHomePage/pic90.png">
         <div class="title">当前借贷额度</div>
       </div>
-      <div style="width: 742px;height: 30px;margin-top: 30px;">
+      <div style="width: 742px;height: 30px;margin-top: 38px;">
         <el-progress :percentage="percentage" :format="format" :color="customColor" :text-inside="true" :stroke-width="20"></el-progress>
       </div>
-      <div style="display: flex;flex-direction: row;align-items: center;margin-top: 67px;">
+      <div style="display: flex;flex-direction: row;align-items: center;margin-top: 39px;">
         <div class="usedQuota" :usedQuota="usedQuota">当前已借：{{usedQuota}}万</div>
         <div class="quota" :quota="quota" style="margin-left: 74px">最高借款额度：{{quota}}万</div>
       </div>
-      <div class="tips">温馨提示：18万需在2021年8月30日前还清</div>
+      <div class="tips" :loanNeedToPay="loanNeedToPay" :timeNeedToPay="timeNeedToPay">温馨提示：{{loanNeedToPay}}万需在{{timeNeedToPay}}前还清</div>
+      <img src="/static/CreditHomePage/line43.png" style="margin-top: 9px;margin-left: 400px;">
     </div>
     <div class="creditInfo">
       <div style="display: flex;flex-direction: row;align-items: center;line-height: 51px;margin-top: 0px;">
@@ -61,6 +62,8 @@
           customColor:'#2CB8B9',
           usedQuota:'18',
           quota:'30',
+          loanNeedToPay:'18',
+          timeNeedToPay:'2020年11月1日',
           infoList1:[
             {
               Title:'企业名称',
@@ -162,7 +165,7 @@
   .tips{
     width: 498px;
     height: 24px;
-    font-size: 18px;
+    font-size: 22px;
     font-family: Source Han Sans CN;
     font-weight: 400;
     line-height: 24px;
