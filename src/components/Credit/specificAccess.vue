@@ -13,8 +13,6 @@
         drag
         action="https://jsonplaceholder.typicode.com/posts/"
         multiple
-        :file-list = "fileList"
-        :on-change="(file, fileList) => {handleChange(file, fileList)}"
         :on-success="handleSuccess"
         :before-upload="beforeUpload">
         <i class="el-icon-upload"></i>
@@ -59,26 +57,7 @@
             this.$message.error('上传文件大小不能超过10MB!');
           }
           return (isJPG || isPDF || isPNG) && isLt10M;
-        },
-        handleChange(file, fileList){
-          // 判断file是否是新增
-          let isExist = false;
-          isExist = this.fileList.some(item => {
-            if(item.name == file.name)
-              return true;
-          });
-          if(!isExist) {
-            // 如果已经存在
-            fileList.some((item, index) => {
-              if(item.uid == file.uid) {
-                fileList.splice(index, 1);
-                return true;
-              }
-            });
-            this.$message.error(`已经存在文件${file.name}, 请勿重复上传`);
-            return false;
-          }
-        },
+        }
       },
 
       data(){
