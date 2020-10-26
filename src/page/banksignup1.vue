@@ -52,17 +52,11 @@
     data() {
       return {
         input:[
-          {name:"姓名", modelname:"sname", ph:"请输入您的姓名"},
-          {name:"邮箱", modelname:"semail", ph:"请输入您的邮箱"},
-          {name:"联系电话", modelname:"stel", ph:"请输入您的联系电话"},
-          {name:"任职岗位", modelname:"sposition", ph:"请输入您的工作岗位"},
+          {name:"姓名", modelname:"", ph:"请输入您的姓名"},
+          {name:"邮箱", modelname:"", ph:"请输入您的邮箱"},
+          {name:"联系电话", modelname:"", ph:"请输入您的联系电话"},
+          {name:"任职岗位", modelname:"", ph:"请输入您的工作岗位"},
         ],
-        info:{
-         sname: '',
-         semail:'',
-         stel:'',
-         sposition:'',
-         }
       }
     },
   }

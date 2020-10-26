@@ -20,7 +20,7 @@
           <div v-for="(item,index) in input" class="inputkuai" :key="index">
             <div class="hang1">
               <div class="label1">{{item.name}}</div>
-              <el-input v-model="item.modelname" :placeholder="item.name" id="cinput"></el-input>
+              <el-input v-model="item.modelname" :placeholder="item.ph" id="cinput"></el-input>
             </div>
             <img src="../../static/signup/xuxian.png" width="85%"></img>
           </div>
@@ -58,15 +58,10 @@
     data() {
       return {
         input:[
-          {name:"姓名", modelname:"name", ph:"请输入您的姓名"},
-          {name:"邮箱", modelname:"email", ph:"请输入您的邮箱"},
-          {name:"联系电话", modelname:"tel", ph:"请输入您的联系电话"},
+          {name:"姓名", modelname:"", ph:"请输入您的姓名"},
+          {name:"邮箱", modelname:"", ph:"请输入您的邮箱"},
+          {name:"联系电话", modelname:"", ph:"请输入您的联系电话"},
         ],
-        info:{
-          name:"",
-          email:"",
-          tel:"",
-        }
       }
     },
 	}

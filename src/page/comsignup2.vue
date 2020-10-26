@@ -18,12 +18,18 @@
         </div>
 
         <div class="form1">
-          <div v-for="(item,index) in input" class="inputkuai" :key="index">
-            <div class="hang1">
-              <div class="label1">{{item.name}}</div>
-              <el-input v-model="item.modelname" :placeholder="item.ph" id="cinput"></el-input>
+          <div class="inputs">
+            <div v-for="(item,index) in input" class="inputkuai" :key="index">
+              <div class="hang1">
+                <div class="label1">{{item.name}}</div>
+                <el-input v-model="item.modelname" :placeholder="item.ph" id="cinput"></el-input>
+              </div>
+              <img src="../../static/signup/xuxian.png" width="85%"></img>
             </div>
-            <img src="../../static/signup/xuxian.png" width="85%"></img>
+          </div>
+          <div class="details" style="height: 100%;">
+            <img src="../../static/signup/question.png" style="margin-top: 85px;"></img>
+            <img src="../../static/signup/question.png"style="margin-top: 230px;"></img>
           </div>
         </div>
 
@@ -54,25 +60,15 @@
     data() {
       return {
         input:[
-          {name:"企业名称", modelname:"comname", ph:"请输入企业名称"},
-          {name:"企业规模", modelname:"scale", ph:"请输入企业规模"},
-          {name:"工商注册信息", modelname:"signinfo", ph:"请输入工商注册信息"},
-          {name:"企业法人", modelname:"legalperson", ph:"请输入企业法人"},
-          {name:"注册资本", modelname:"capital", ph:"请输入注册资本"},
-          {name:"行业分类", modelname:"kind", ph:"请输入行业分类"},
-          {name:"公司地址", modelname:"comaddress", ph:"请输入公司地址"},
-          {name:"公司电话", modelname:"comtel", ph:"请输入公司联系电话"},
+          {name:"企业名称", modelname:"", ph:"请输入企业名称"},
+          {name:"企业规模", modelname:"", ph:"(大/中/小）"},
+          {name:"工商注册信息", modelname:"", ph:"请输入工商注册信息"},
+          {name:"企业法人", modelname:"", ph:"请输入企业法人"},
+          {name:"注册资本", modelname:"", ph:"请输入注册资本"},
+          {name:"行业分类", modelname:"", ph:"请输入行业分类"},
+          {name:"公司地址", modelname:"", ph:"请输入公司地址"},
+          {name:"公司电话", modelname:"", ph:"请输入公司联系电话"},
         ],
-        info:{
-          comname: '',
-          scale:'',
-          signinfo:'',
-          legalperson:'',
-          capital:'',
-          kind:'',
-          comaddress:'',
-          comtel:'',
-        }
       }
     },
   }
@@ -144,8 +140,7 @@
    }
    .form1{
      display: flex;
-     flex-direction: column;
-     align-items: center;
+     flex-direction: row;
      width: 40%;
      height: auto;
      margin-top: 45px;

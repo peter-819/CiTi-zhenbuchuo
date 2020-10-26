@@ -13,6 +13,9 @@ import banksignup1 from "../page/banksignup1";
 import banksignup2 from "../page/banksignup2";
 import logpop from "../components/logpop.vue";
 import submitContract from "../components/Credit/submitContract";
+import bankLendRequire from "../page/bankLendRequire";
+import signin from "../page/signin.vue";
+import choosepop from "../components/choosepop.vue";
 
 Vue.use(Router)
 
@@ -77,6 +80,21 @@ export default new Router({
       path: '/submitContract',
       name:'submitContract',
       component: submitContract
-    }
+    },
+    {
+      path: '/bankLendRequire',
+      name:'bankLendRequire',
+      component: bankLendRequire
+    },
+    {
+      path: '/signin',
+      name:'signin',
+      component: signin
+    },
+    {
+      path:'/choosepop',
+      name:'choosepop',
+      component: choosepop
+    },
   ]
 })

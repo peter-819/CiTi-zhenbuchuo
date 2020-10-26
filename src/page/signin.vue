@@ -3,35 +3,21 @@
     <div><heading style="background-color: rgb(74,73,76);"></heading></div>
     <div class="all">
       <div class="container1">
-        <div class="title">用户注册</div>
-        <div class="progress">
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-          <img src="../../static/signup/bline.png" class="line"></img>
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-          <img src="../../static/signup/bline.png" class="line"> </img>
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-        </div>
-        <div class="progress_name">
-          <div class="text" style="margin-right: 100px;">个人信息</div>
-          <div class="text" style="margin-right: 100px;">企业信息</div>
-          <div class="text">完成注册</div>
-        </div>
-
+        <div class="title">用户登录</div>
         <div class="form1">
           <div class="hang1">
-            <div class="label1">设置密码</div>
-            <el-input v-model="password1" placeholder="请输入密码" id="cinput"></el-input>
+            <div class="label1">输入账号</div>
+            <el-input v-model="account" placeholder="请输入账号" id="cinput"></el-input>
           </div>
           <img src="../../static/signup/xuxian.png"></img>
           <div class="hang1">
-            <div class="label1">确认密码</div>
-            <el-input v-model="password2" placeholder="请输入密码" id="cinput"></el-input>
+            <div class="label1">输入密码</div>
+            <el-input v-model="password" placeholder="请输入密码" id="cinput"></el-input>
           </div>
         </div>
 
         <div class="last">
-          <img class="button" src="../../static/signup/last.png"></img>
-          <img class="button" src="../../static/signup/finished.png"></img>
+          <img class="button" src="../../static/signup/signin.png"></img>
         </div>
 
       </div>
@@ -42,14 +28,14 @@
 <script>
   import heading from "../components/heading.vue"
   	export default{
-  		name :"comsignup3",
+  		name :"signin",
   		components: {
   		  heading,
   		},
       data() {
         return {
-          password1:"",
-          password2:"",
+          account:"",
+          password:"",
         }
       },
   	}
@@ -74,46 +60,18 @@
     border-radius: 15px;
   }
   .title{
-    margin-top: 30px;
+    margin-top: 100px;
     font-size: 35px;
     color: #2CB8B9;
     font-weight: 700;
   }
-  .progress{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 80px;
-  }
-  .point{
-    width: 30px;
-    height: 30px;
-  }
-  .line{
-    width:150px;
-    height: 1px;
-  }
-  .progress_name{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .text{
-     width: 102px;
-     height: 24px;
-     font-size: 24px;
-     font-family: Source Han Sans CN;
-     font-weight: 400;
-     line-height: 41px;
-     color: #2CB8B9;
-   }
    .form1{
      display: flex;
      flex-direction: column;
      align-items: center;
      width: 40%;
      height: auto;
-     margin-top: 45px;
+     margin-top: 128px;
      background-color: #FFFFFF;
    }
    .inputkuai{
@@ -148,16 +106,16 @@
 
   .last{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    width:30%;
+    justify-items: center;
+    width:100%;
     height: 70px;
-    margin-top: 50px;
+    margin-top: 54px;
   }
   .button{
-    width:44%;
+    width:13%;
     height: auto;
-    margin-right: 50px;
     margin-bottom: 45px;
   }
 </style>
