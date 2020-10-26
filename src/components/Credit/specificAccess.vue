@@ -9,12 +9,18 @@
         上传记录证明：
       </div>
       <el-upload
-        style="margin-left:103px;margin-top: 23px;"
+        style="margin-left:103px;margin-top: 23px;width: 364px"
         drag
         action="https://jsonplaceholder.typicode.com/posts/"
         multiple
+        ref="upload"
+        multiple
         :on-success="handleSuccess"
-        :before-upload="beforeUpload">
+        :before-upload="beforeUpload"
+        :on-preview="handlePreview"
+        :on-remove="handleRemove"
+        :file-list="fileList"
+        :auto-upload="false">
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
         <div class="el-upload__tip" slot="tip">只能上传jpg/png/pdf文件，且不超过10MB</div>
@@ -32,7 +38,7 @@
         maxlength="500"
         show-word-limit>
       </el-input>
-      <img src="/static/CreditHomePage/pic147.png" style="margin-left: 648px;margin-top: 80px">
+      <el-button style="background-color: #2CB8B9;color: #FFFFFF;font-size:22px;width: 130px;height: 46px;border-radius: 10px;margin-left: 658px;margin-top: 98px" type="success" @click="submitUpload">提交</el-button>
     </div>
   </div>
 </template>
@@ -40,7 +46,21 @@
 <script>
     export default {
       name: "specificAccess",
+      data(){
+        return{
+          fileList:[]
+        }
+      },
       methods:{
+        submitUpload() {
+          this.$refs.upload.submit();
+        },
+        handleRemove(file, fileList) {
+          console.log(file, fileList);
+        },
+        handlePreview(file) {
+          console.log(file);
+        },
         handleSuccess(res, file) {
           this.url = URL.createObjectURL(file.raw);
         },

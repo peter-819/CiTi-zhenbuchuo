@@ -32,9 +32,8 @@
             </el-main>
           </el-container>
           <el-aside width="200" style="display: flex">
-            <div style="width: 144px;height: 63px; border-radius: 10px;background: #2CB8B9;color: #FFFFFF;font-size: 24px;">
-            提交
-          </div> </el-aside>
+            <img src="/static/CreditHomePage/pic171.png" style="align-self: center" @click="jumpToDetail" alt="">
+          </el-aside>
         </el-container>
         <img src="/static/CreditHomePage/line128.png">
       </div>
@@ -57,6 +56,11 @@
           date: '2020年11月1日',
           url: 'http://www.baidu.com'
         }
+      }
+    },
+    methods:{
+      jumpToDetail(){
+        window.open(message.url, '_blank')
       }
     }
   }
