@@ -11,11 +11,11 @@ import comsignup2 from "../page/comsignup2";
 import comsignup3 from "../page/comsignup3";
 import banksignup1 from "../page/banksignup1";
 import banksignup2 from "../page/banksignup2";
-import logpop from "../components/logpop.vue";
+import logpop from "../components/logPop.vue";
 import submitContract from "../components/Credit/submitContract";
 import bankLendRequire from "../page/bankLendRequire";
 import signin from "../page/signin.vue";
-import choosepop from "../components/choosepop.vue";
+import choosepop from "../components/choosePop.vue";
 
 Vue.use(Router)
 

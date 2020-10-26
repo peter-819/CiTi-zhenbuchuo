@@ -16,7 +16,8 @@
       <div
         style="margin-top: 120px;display: flex;align-items: center;justify-content: center;flex-direction: column;">
         <div
-          style="width: 233px;height: 63px;border: 3px solid #2CB8B9;border-radius: 10px;background: none;display: flex;align-items: center;justify-content: center;color: #2CB8B9;font-size: 24px;letter-spacing: 8px;">
+          style="width: 233px;height: 63px;border: 3px solid #2CB8B9;border-radius: 10px;background: none;display: flex;align-items: center;justify-content: center;color: #2CB8B9;font-size: 24px;letter-spacing: 8px;"
+          @click="showLogPop">
           LOGIN
         </div>
         <img style="width: 59px;height: 27px;margin-top: 44px" src="static/HomePage/arrow_down.png"/>
@@ -44,6 +45,13 @@
       </div>
     </div>
     <div style="margin-top: 147px"><bottom></bottom></div>
+
+    <div style="position: absolute;top:149px;left:289px;right:289px;height: 704px;width: 70%;background-color: rgba(0,0,0,0.65);" v-if="logInPop">
+      <log-pop></log-pop>
+    </div>
+    <div style="position: absolute;top:149px;left:289px;right:289px;height: 704px;width: 70%;background-color: rgba(0,0,0,0.65);" v-if="isChosen">
+      <choose-pop></choose-pop>
+    </div>
   </div>
 
 </template>
@@ -53,11 +61,15 @@
   import introContext from "../components/introContext.vue";
   import bottom from "../components/bottom.vue";
   import News from "../components/news";
+  import logPop from "../components/logPop";
+  import choosePop from "../components/choosePop";
 
   export default {
     name: "HomePage",
     data(){
       return{
+        logInPop:false,
+        isChosen:false,
         context1:{
           Title:'技术亮点',
           Content:'这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容<br>',
@@ -87,7 +99,15 @@
       heading,
       introContext,
       bottom,
-      News
+      News,
+      logPop,
+      choosePop
+    },
+    methods: {
+      showLogPop: function () {
+        this.logInPop = !this.logInPop ;
+      }
+
     }
   }
 </script>

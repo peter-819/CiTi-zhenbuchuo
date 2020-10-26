@@ -11,7 +11,7 @@
 
 <script>
   export default{
-  	name :"choosepop",
+  	name :"choosePop",
   	components: {
   	},
     data() {
@@ -24,10 +24,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 1332px;
     height: 704px;
-    background: #707070;
-    opacity: 0.65;
+    background: rgba(112,112,112,0.65);
     border-radius: 15px;
   }
 
