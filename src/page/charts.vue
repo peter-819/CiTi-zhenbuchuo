@@ -25,14 +25,13 @@
       this.drawLine();
     },
     methods: {
-      drawLine:async function() {
+      drawLine: async function () {
         // 基于准备好的dom，初始化echarts实例
         let myChart = this.$echarts.init(document.getElementById('charts'));
         let res = await axios.get('/neo4j/getAllNodes')
-        console.log(res)
         let graph = res.data.data
-        console.log(graph)
         let categories = []
+        console.log(res)
         graph.nodes.forEach(node => {
           categories.push(node.category)
         })
@@ -40,100 +39,152 @@
         for (let i = 0; i < categories.length; i++) {
           categories[i] = {name: '类目' + categories[i]}
         }
-        console.log(categories)
         graph.nodes.forEach(node => {
-          node.itemStyle = null;
-          node.value = node.symbolSize;
           switch (node.scale) {
             case '小':
-              node.symbolSize = 20
-              break
+              node.symbolSize = 10
+              break;
             case '中':
-              node.symbolSize = 40
-              break
+              node.symbolSize = 20
+              break;
             case '大':
-              node.symbolSize = 60
-              break
+              node.symbolSize = 30
+              break;
           }
-          node.label = {
-            show: node.symbolSize > 30
-          };
-          node.category = node.attributes.modularity_class;
+          node.value = node.fullName
+          node.category = parseInt(node.category)
         })
+        graph.links.forEach(link => {
+          link.lineStyle = {normal: {}}
+        })
+        console.log(graph.nodes.slice(0,2))
+        console.log(graph.links)
 
-        axios.get('http://localhost:8080/static/charts/les-miserables.gexf').then(function (xml) {
-
-          var graph = echarts.dataTool.gexf.parse(xml.data);
-          console.log(graph)
-          var categories = [];
-          for (var i = 0; i < 9; i++) {
-            categories[i] = {
-              name: '类目' + i
-            };
-          }
-          console.log(categories)
-          graph.nodes.forEach(function (node) {
-            node.itemStyle = null;
-            node.value = node.symbolSize;
-            node.symbolSize /= 1.5;
-            node.label = {
-              show: node.symbolSize > 30
-            };
-            node.category = node.attributes.modularity_class;
-          });
-
-          var option = {
-            title: {
-              text: 'Les Miserables',
-              subtext: 'Default layout',
-              top: 'bottom',
-              left: 'right'
-            },
-            tooltip: {},
-            legend: [{
-              // selectedMode: 'single',
-              data: categories.map(function (a) {
-                return a.name;
-              })
-            }],
-            animationDuration: 1500,
-            animationEasingUpdate: 'quinticInOut',
-            series: [
-              {
-                name: 'Les Miserables',
-                type: 'graph',
-                layout: 'none',
-                data: graph.nodes,
-                links: graph.links,
-                categories: categories,
-                roam: true,
-                focusNodeAdjacency: true,
-                itemStyle: {
-                  borderColor: '#fff',
-                  borderWidth: 1,
-                  shadowBlur: 10,
-                  shadowColor: 'rgba(0, 0, 0, 0.3)'
-                },
-                label: {
-                  position: 'right',
-                  formatter: '{b}'
-                },
+        let option = {
+          title: {
+            text: 'test',
+            subtext: 'Default layout',
+            top: 'bottom',
+            left: 'right'
+          },
+          tooltip: {},
+          legend: [{
+            // selectedMode: 'single',
+            data: categories.map(function (a) {
+              return a.name;
+            })
+          }],
+          animationDuration: 1500,
+          animationEasingUpdate: 'quinticInOut',
+          series: [
+            {
+              name: 'Les Miserables',
+              type: 'graph',
+              layout: 'force',
+              data: graph.nodes,
+              links: graph.links,
+              categories: categories,
+              roam: true,
+              focusNodeAdjacency: true,
+              draggable: true,
+              itemStyle: {
+                borderColor: '#fff',
+                borderWidth: 1,
+                shadowBlur: 10,
+                shadowColor: 'rgba(0, 0, 0, 0.3)'
+              },
+              label: {
+                position: 'right',
+                formatter: '{b}'
+              },
+              lineStyle: {
+                color: 'source',
+                curveness: 0.2
+              },
+              emphasis: {
                 lineStyle: {
-                  color: 'source',
-                  curveness: 0.2
-                },
-                emphasis: {
-                  lineStyle: {
-                    width: 10
-                  }
+                  width: 10
                 }
+              },
+              force: {
+                edgeLength: 100
               }
-            ]
-          };
-          myChart.setOption(option);
-        }).catch(err => {
-          console.log(err);
-        });
+            }
+          ]
+        };
+        myChart.setOption(option);
+
+        // axios.get('http://localhost:8080/static/charts/les-miserables.gexf').then(function (xml) {
+        //
+        //   var graph = echarts.dataTool.gexf.parse(xml.data);
+        //   var categories = [];
+        //   for (var i = 0; i < 9; i++) {
+        //     categories[i] = {
+        //       name: '类目' + i
+        //     };
+        //   }
+        //   graph.nodes.forEach(function (node) {
+        //     node.itemStyle = null;
+        //     node.value = node.symbolSize;
+        //     node.symbolSize /= 1.5;
+        //     node.label = {
+        //       show: node.symbolSize > 30
+        //     };
+        //     node.category = node.attributes.modularity_class;
+        //   });
+        //   console.log(graph.links)
+        //   var option = {
+        //     title: {
+        //       text: 'Les Miserables',
+        //       subtext: 'Default layout',
+        //       top: 'bottom',
+        //       left: 'right'
+        //     },
+        //     tooltip: {},
+        //     legend: [{
+        //       // selectedMode: 'single',
+        //       data: categories.map(function (a) {
+        //         return a.name;
+        //       })
+        //     }],
+        //     animationDuration: 1500,
+        //     animationEasingUpdate: 'quinticInOut',
+        //     series: [
+        //       {
+        //         name: 'Les Miserables',
+        //         type: 'graph',
+        //         layout: 'none',
+        //         data: graph.nodes,
+        //         links: graph.links,
+        //         categories: categories,
+        //         roam: true,
+        //         focusNodeAdjacency: true,
+        //         itemStyle: {
+        //           borderColor: '#fff',
+        //           borderWidth: 1,
+        //           shadowBlur: 10,
+        //           shadowColor: 'rgba(0, 0, 0, 0.3)'
+        //         },
+        //         label: {
+        //           position: 'right',
+        //           formatter: '{b}'
+        //         },
+        //         lineStyle: {
+        //           color: 'source',
+        //           curveness: 0.2
+        //         },
+        //         emphasis: {
+        //           lineStyle: {
+        //             width: 10
+        //           }
+        //         }
+        //       }
+        //     ]
+        //   };
+        //   myChart.setOption(option);
+        // }).catch(err => {
+        //   console.log(err);
+        // });
       }
     }
   }
