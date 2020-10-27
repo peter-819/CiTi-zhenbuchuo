@@ -5,11 +5,11 @@
       <div class="container1">
         <div class="title">用户注册</div>
         <div class="progress">
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-          <img src="../../static/signup/bline.png" class="line"></img>
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-          <img src="../../static/signup/bline.png" class="line"> </img>
-          <img src="../../static/signup/bpoint.png" class="point"></img>
+          <img src="../../static/signup/bpoint.png" class="point">
+          <img src="../../static/signup/bline.png" class="line">
+          <img src="../../static/signup/bpoint.png" class="point">
+          <img src="../../static/signup/bline.png" class="line">
+          <img src="../../static/signup/bpoint.png" class="point">
         </div>
         <div class="progress_name">
           <div class="text" style="margin-right: 100px;">个人信息</div>
@@ -20,18 +20,18 @@
         <div class="form1">
           <div class="hang1">
             <div class="label1">设置密码</div>
-            <el-input v-model="password1" placeholder="请输入密码" id="cinput"></el-input>
+            <el-input v-model="password1" placeholder="请输入密码" id="cinput" show-password></el-input>
           </div>
-          <img src="../../static/signup/xuxian.png"></img>
+          <img src="../../static/signup/xuxian.png">
           <div class="hang1">
             <div class="label1">确认密码</div>
-            <el-input v-model="password2" placeholder="请输入密码" id="cinput"></el-input>
+            <el-input v-model="password2" placeholder="请输入密码" id="cinput" show-password></el-input>
           </div>
         </div>
 
         <div class="last">
-          <img class="button" src="../../static/signup/last.png"></img>
-          <img class="button" src="../../static/signup/finished.png"></img>
+          <img @click="backTo2" class="button" src="../../static/signup/last.png">
+          <img class="button" src="../../static/signup/finished.png">
         </div>
 
       </div>
@@ -42,7 +42,7 @@
 <script>
   import heading from "../components/heading.vue"
   	export default{
-  		name :"comsignup3",
+  		name :"comSignUp3",
   		components: {
   		  heading,
   		},
@@ -52,6 +52,11 @@
           password2:"",
         }
       },
+      methods:{
+        backTo2:function () {
+            this.$router.push({path:'/comSignUp2'})
+        }
+      }
   	}
 </script>
 
@@ -111,15 +116,10 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     width: 40%;
+     width: 542px;
      height: auto;
      margin-top: 45px;
      background-color: #FFFFFF;
-   }
-   .inputkuai{
-     display: flex;
-     flex-direction: column;
-     align-items: center;
    }
    .hang1{
      display: flex;

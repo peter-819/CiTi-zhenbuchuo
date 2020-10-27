@@ -5,11 +5,11 @@
     <div class="roles">
       <div @click="selectCom" class="role" style="margin-right: 100px;">
         <div class="text">企业人员</div>
-        <img class="picture" src="../../static/HomePage/company.png"></img>
+        <img class="picture" src="../../static/HomePage/company.png">
       </div>
       <div @click="selectBank" class="role">
         <div class="text">银行人员</div>
-        <img class="picture" src="../../static/HomePage/banker.png"></img>
+        <img class="picture" src="../../static/HomePage/banker.png">
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
     components: {},
     data() {
       return {
-        open: true
+        identity:''
       }
     },
     methods: {
@@ -31,11 +31,14 @@
       selectCom: function () {
         this.$parent.isChosen = !this.$parent.isChosen;
         this.$parent.logInPop = !this.$parent.logInPop;
+        this.identity = 'company'
+        this.$parent.temp =this.identity
       },
       selectBank: function () {
         this.$parent.isChosen = !this.$parent.isChosen;
         this.$parent.logInPop = !this.$parent.logInPop;
-
+        this.identity = 'bank'
+        this.$parent.temp =this.identity
       }
     }
   }
