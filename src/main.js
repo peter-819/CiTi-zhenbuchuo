@@ -6,6 +6,8 @@ import router from './router'
 import axios from 'axios'
 import $ from 'jquery'
 
+axios.defaults.baseURL = '/api'
+
 Vue.config.productionTip = false
 Vue.prototype.$ajax = axios
 /* eslint-disable no-new */
