@@ -17,18 +17,18 @@
       let this_ = this
       return {
         cols: [
-          {span: "2", context: "名字", offset: "1"},
-          {span: "2", context: "首页", offset: "9", func:function () {
+          {span: 2, context: "名字", offset: 1},
+          {span: 2, context: "首页", offset: 9, func:function () {
               this_.$router.push({path:'/'})
             }},
           {
-            span: "3", context: "借贷业务", func: function () {
+            span: 3, context: "借贷业务", func: function () {
               this_.$router.push({path: '/ClickCreditWithoutLogin'})
             }
           },
-          {span: "2", context: "新闻"},
-          {span: "2", src: "./static/HomePage/message.png", offset: "2"},
-          {span: "1", src: "./static/HomePage/admin.png"}
+          {span: 2, context: "新闻"},
+          {span: 2, src: "./static/HomePage/message.png", offset: 2},
+          {span: 1, src: "./static/HomePage/admin.png"}
 
         ]
       };
