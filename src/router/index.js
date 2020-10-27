@@ -44,27 +44,27 @@ export default new Router({
     {
       path: '/comSignUp1',
       name: 'comSignUp1',
-      component: comSignUp1
+      component: comsignup1
     },
     {
       path: '/comSignUp2',
       name: 'comSignUp2',
-      component: comSignUp2
+      component: comsignup2
     },
     {
       path: '/comSignUp3',
       name: 'comSignUp3',
-      component: comSignUp3
+      component: comsignup3
     },
     {
       path: '/bankSignUp1',
       name: 'banKSignUp1',
-      component: bankSignUp1
+      component: banksignup1
     },
     {
       path: '/bankSignUp2',
       name: 'bankSignUp2',
-      component: bankSignUp2
+      component: banksignup2
     },
     {
       path:'/charts',
