@@ -6,11 +6,11 @@ import neo4j from "../page/neo4j";
 import ClickCreditWithoutLogin from "../page/ClickCreditWithoutLogin";
 import CreditHomePage from "../page/CreditHomePage";
 import charts from "../page/charts";
-import comSignUp1 from "../page/comSignUp1";
-import comSignUp2 from "../page/comSignUp2";
-import comSignUp3 from "../page/comSignUp3";
-import bankSignUp1 from "../page/bankSignUp1";
-import bankSignUp2 from "../page/bankSignUp2";
+import comsignup1 from "../page/comSignUp1";
+import comsignup2 from "../page/comSignUp2";
+import comsignup3 from "../page/comSignUp3";
+import banksignup1 from "../page/bankSignUp1";
+import banksignup2 from "../page/bankSignUp2";
 import logPop from "../components/logPop.vue";
 import submitContract from "../components/Credit/submitContract";
 import bankLendRequire from "../page/bankLendRequire";
@@ -44,27 +44,27 @@ export default new Router({
     {
       path: '/comSignUp1',
       name: 'comSignUp1',
-      component: comsignup1
+      component: comSignUp1
     },
     {
       path: '/comSignUp2',
       name: 'comSignUp2',
-      component: comsignup2
+      component: comSignUp2
     },
     {
       path: '/comSignUp3',
       name: 'comSignUp3',
-      component: comsignup3
+      component: comSignUp3
     },
     {
       path: '/bankSignUp1',
       name: 'banKSignUp1',
-      component: banksignup1
+      component: bankSignUp1
     },
     {
       path: '/bankSignUp2',
       name: 'bankSignUp2',
-      component: banksignup2
+      component: bankSignUp2
     },
     {
       path:'/charts',
