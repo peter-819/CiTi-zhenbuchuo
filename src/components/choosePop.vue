@@ -21,15 +21,18 @@
       }
     },
     methods:{
-  	  closeChoosePop:function () {
+  	  closeChoosePop: function () {
         this.$parent.isChosen = !this.$parent.isChosen;
       },
-      jumpToSignIn:function () {
+      jumpToSignIn: function () {
         this.$router.push({path: '/signIn'})
       },
       jumpToSignUp: function () {
-        if(logPop.data().identity === 'company'){
+        if(this.$parent.temp === 'company'){
           this.$router.push({path:'/comSignUp1'})
+        }
+        if(this.$parent.temp === 'bank'){
+          this.$router.push({path:'/bankSignUp1'})
         }
       }
     }

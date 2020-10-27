@@ -71,6 +71,7 @@
       return{
         logInPop:false,
         isChosen:false,
+        temp:'',
         context1:{
           Title:'技术亮点',
           Content:'这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容 <br> 这里放具体的内容内容内容<br>',
@@ -107,10 +108,8 @@
     methods: {
       showLogPop: function () {
         this.logInPop = !this.logInPop ;
-        console.log(this.logInPop);
       }
-
-    }
+    },
   }
 </script>
 
