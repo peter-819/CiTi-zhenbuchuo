@@ -27,7 +27,7 @@
         </div>
 
         <div class="last">
-          <img class="button" src="../../static/signup/last.png"></img>
+          <img @click="backTo1" class="button" src="../../static/signup/last.png"></img>
           <img class="button" src="../../static/signup/finished.png"></img>
         </div>
 
@@ -39,7 +39,7 @@
 <script>
   import heading from "../components/heading.vue"
   export default{
-  	name :"banksignup2",
+  	name :"bankSignUp2",
   	components: {
   	  heading,
   	},
@@ -49,6 +49,11 @@
         password2:'',
       }
     },
+    methods:{
+  	  backTo1:function () {
+        this.$router.push({path:'/bankSignUp1'})
+      }
+    }
   }
 </script>
 

@@ -3,11 +3,14 @@
     <div class="search">
       <el-input  v-model="search_key" placeholder="   搜索借贷请求" id="searchinput"></el-input>
     </div>
-    <div class="options">
-      <div class="option" style="margin-left:43%;">全部</div>
-      <div class="option">已处理</div>
-      <div class="option">未处理</div>
-    </div>
+    <el-menu :default-active="this.$route.path" mode="horizontal"  @open="handleOpen" @close="handleClose" style="background-color: #F5F6FA;position: absolute;left:44%;top:200px">
+      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
+        <template slot="title">
+          <i class="el-icon-s-platform"></i>
+          <span> {{ item.navItem }}</span>
+        </template>
+      </el-menu-item>
+    </el-menu>
 
     <div class="requires">
       <div v-for="(item,index) in requires" class="require" :key="index">
@@ -40,13 +43,25 @@
     data(){
       return {
         search_key:"",
-      requires:[
+        requires:[
         {comname:"三四五六七八股份有限公司",Rmount:"39",Lmount:"60",already:"10",surplus:"50",time:"2020年9月8日20：00",status:"0"},
         {comname:"三四五六七八股份有限公司",Rmount:"39",Lmount:"60",already:"10",surplus:"50",time:"2020年9月8日20：00",status:"0"},
         {comname:"三四五六七八股份有限公司",Rmount:"39",Lmount:"60",already:"10",surplus:"50",time:"2020年9月8日20：00",status:"1"},
         {comname:"三四五六七八股份有限公司",Rmount:"39",Lmount:"60",already:"10",surplus:"50",time:"2020年9月8日20：00",status:"1"},
         {comname:"三四五六七八股份有限公司",Rmount:"39",Lmount:"60",already:"10",surplus:"50",time:"2020年9月8日20：00",status:"1"},
-        ]
+        ],
+        navList:[
+          {name:'/components/ServiceHall',navItem:'全部'},
+          {name:'/components/Management',navItem:'未处理'},
+          {name:'/components/User',navItem:'已处理'},
+        ] }
+    },
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
       }
     }
   }
@@ -59,9 +74,9 @@
     margin-top: 40px;
   }
   #searchinput{
-    width:21%;
+    width:398px;
     height:58px;
-    margin-left: 48%;
+    margin-left:900px;
     border: 2px solid #2CB8B9;
     border-radius: 31px;
   }
@@ -89,8 +104,8 @@
   .main{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width:100%;
+    width:1600px;
+    margin-left: 40px;
   }
   .options{
     width: 100%;
@@ -107,12 +122,12 @@
     margin-right: 185px;
   }
   .requires{
-    width:82%;
+    width:1500px;
     height:auto;
     display:flex;
     flex-direction: column;
-    margin-top: 38px;
-    margin-left: 345px;
+    margin-top: 100px;
+    margin-left: 245px;
   }
   .require{
     width:86%;
@@ -143,7 +158,7 @@
     color: #707070;
   }
   .time{
-    margin-left: 74%;
+    margin-left: 78%;
     font-size: 22px;
     font-family: Source Han Sans CN;
     font-weight: 400;

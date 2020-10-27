@@ -67,6 +67,7 @@
 
   export default {
     name: "HomePage",
+    inject: ['reload'],
     data(){
       return{
         logInPop:false,
@@ -109,7 +110,7 @@
       showLogPop: function () {
         this.logInPop = !this.logInPop ;
       }
-    },
+    }
   }
 </script>
 
