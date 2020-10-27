@@ -5,10 +5,10 @@
       <div class="container1">
         <div class="title">用户注册</div>
         <div class="progress">
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-          <img src="../../static/signup/bline.png" class="line"></img>
-          <img src="../../static/signup/bline.png" class="line"> </img>
-          <img src="../../static/signup/bpoint.png" class="point"></img>
+          <img src="../../static/signup/bpoint.png" class="point">
+          <img src="../../static/signup/bline.png" class="line">
+          <img src="../../static/signup/bline.png" class="line">
+          <img src="../../static/signup/bpoint.png" class="point">
         </div>
         <div class="progress_name">
           <div class="text1" style="margin-right: 100px;">个人信息</div>
@@ -19,7 +19,7 @@
             <div class="label1">设置密码</div>
             <el-input v-model="password1" placeholder="请输入密码" id="cinput"></el-input>
           </div>
-          <img src="../../static/signup/xuxian.png"></img>
+          <img src="../../static/signup/xuxian.png">
           <div class="hang1">
             <div class="label1">确认密码</div>
             <el-input v-model="password2" placeholder="请输入密码" id="cinput"></el-input>
@@ -27,8 +27,8 @@
         </div>
 
         <div class="last">
-          <img class="button" src="../../static/signup/last.png"></img>
-          <img class="button" src="../../static/signup/finished.png"></img>
+          <img @click="backTo1" class="button" src="../../static/signup/last.png">
+          <img class="button" src="../../static/signup/finished.png">
         </div>
 
       </div>
@@ -39,7 +39,7 @@
 <script>
   import heading from "../components/heading.vue"
   export default{
-  	name :"banksignup2",
+  	name :"bankSignUp2",
   	components: {
   	  heading,
   	},
@@ -49,6 +49,11 @@
         password2:'',
       }
     },
+    methods:{
+  	  backTo1:function () {
+        this.$router.push({path:'/bankSignUp1'})
+      }
+    }
   }
 </script>
 

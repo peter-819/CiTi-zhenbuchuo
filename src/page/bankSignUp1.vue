@@ -5,10 +5,10 @@
       <div class="container1">
         <div class="title">用户注册</div>
         <div class="progress">
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-          <img src="../../static/signup/bline.png" class="line"></img>
-          <img src="../../static/signup/gline.png" class="line"> </img>
-          <img src="../../static/signup/gpoint.png" class="point"></img>
+          <img src="../../static/signup/bpoint.png" class="point">
+          <img src="../../static/signup/bline.png" class="line">
+          <img src="../../static/signup/gline.png" class="line">
+          <img src="../../static/signup/gpoint.png" class="point">
         </div>
         <div class="progress_name">
           <div class="text1">个人信息</div>
@@ -21,20 +21,20 @@
               <div class="label1">{{item.name}}</div>
               <el-input v-model="item.modelname" :placeholder="item.name" id="cinput"></el-input>
             </div>
-            <img src="../../static/signup/xuxian.png" width="85%"></img>
+            <img src="../../static/signup/xuxian.png" width="85%">
           </div>
         </div>
 
         <div class="form2">
           <div class="hang2">
             <div class="label2">上传工作证件</div>
-            <img class="IDCard" src="../../static/signup/card.png"></img>
+            <img class="IDCard" src="../../static/signup/card.png">
           </div>
         </div>
 
         <div class="last">
-          <img class="button" src="../../static/signup/last.png"></img>
-          <img class="button" src="../../static/signup/next.png"></img>
+          <img @click="backToHome" class="button" src="../../static/signup/last.png">
+          <img @click="jumpTo2" class="button" src="../../static/signup/next.png">
         </div>
 
       </div>
@@ -45,7 +45,7 @@
 <script>
   import heading from "../components/heading.vue"
   export default{
-  	name :"banksignup1",
+  	name :"bankSignUp1",
   	components: {
   	  heading,
   	},
@@ -59,6 +59,14 @@
         ],
       }
     },
+    methods:{
+  	  backToHome:function () {
+        this.$router.push({path:'/'})
+      },
+      jumpTo2:function () {
+        this.$router.push({path:'/bankSignUp2'})
+      }
+    }
   }
 </script>
 

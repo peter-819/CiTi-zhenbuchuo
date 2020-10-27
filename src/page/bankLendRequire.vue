@@ -1,7 +1,7 @@
 <template>
   <div id="all">
     <heading style="background-color: rgb(74,73,76);" v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}"></heading>
-    <credit-aside v-model:selected="selected" @select="selectedIndexChange"></credit-aside>
+    <bank-l-r-aside v-model:selected="selected" @select="selectedIndexChange"></bank-l-r-aside>
     <div :is="forms[selected]"></div>
   </div>
 </template>
@@ -21,7 +21,6 @@
   	},
     data() {
       return {
-        search_key:"",
         selected: 0,
         forms: ['bankLRinfo','Network'],
 
@@ -38,7 +37,7 @@
 <style>
   #all{
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: #F5F6FA;
   }
   .container{
