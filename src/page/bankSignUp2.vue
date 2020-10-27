@@ -29,13 +29,8 @@
         </div>
 
         <div class="last">
-<<<<<<< HEAD
           <img @click="backTo1" class="button" src="../../static/signup/last.png"></img>
           <img @click="signup" class="button" src="../../static/signup/finished.png"></img>
-=======
-          <img @click="backTo1" class="button" src="../../static/signup/last.png">
-          <img class="button" src="../../static/signup/finished.png">
->>>>>>> 469cec11215c26908d29e65ba0d3c3401fcca00b
         </div>
 
       </div>
@@ -47,19 +42,11 @@
 <script src="js/vue-resource.js"></script>
 <script>
   import heading from "../components/heading.vue"
-<<<<<<< HEAD
-  export default {
-    name: "banksignup2",
-    components: {
-      heading,
-    },
-=======
   export default{
-  	name :"bankSignUp2",
+  	name :"bankSignUp1",
   	components: {
   	  heading,
   	},
->>>>>>> 469cec11215c26908d29e65ba0d3c3401fcca00b
     data() {
       return {
         password1: '',
@@ -70,7 +57,6 @@
         position: this.$route.query.position,
       }
     },
-<<<<<<< HEAD
     mounted() {
       console.log(this.$data.name),
         console.log(this.$data.email)
@@ -108,13 +94,6 @@
         });
       },
     },
-=======
-    methods:{
-  	  backTo1:function () {
-        this.$router.push({path:'/bankSignUp1'})
-      }
-    }
->>>>>>> 469cec11215c26908d29e65ba0d3c3401fcca00b
   }
 </script>
 

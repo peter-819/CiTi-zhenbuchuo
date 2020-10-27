@@ -33,18 +33,8 @@
         </div>
 
         <div class="last">
-<<<<<<< HEAD
-<<<<<<< HEAD
           <img  @click="backToHome" class="button" src="../../static/signup/last.png"></img>
           <img @click="jumpTo2" class="button" src="../../static/signup/next.png"></img>
-=======
-          <img @click="backToHome" class="button" src="../../static/signup/last.png">
-          <img @click="jumpTo2" class="button" src="../../static/signup/next.png">
->>>>>>> 469cec11215c26908d29e65ba0d3c3401fcca00b
-=======
-          <img @click="backToHome" class="button" src="../../static/signup/last.png">
-          <img @click="jumpTo2" class="button" src="../../static/signup/next.png">
->>>>>>> 469cec11215c26908d29e65ba0d3c3401fcca00b
         </div>
 
       </div>
@@ -70,8 +60,6 @@
       }
     },
     methods:{
-<<<<<<< HEAD
-<<<<<<< HEAD
       jumpTo2:function () {
         this.$router.push({
           path:'/bankSignUp2',
@@ -85,18 +73,6 @@
       },
       backToHome:function(){
         this.$router.push({path:'/'})
-=======
-=======
->>>>>>> 469cec11215c26908d29e65ba0d3c3401fcca00b
-  	  backToHome:function () {
-        this.$router.push({path:'/'})
-      },
-      jumpTo2:function () {
-        this.$router.push({path:'/bankSignUp2'})
-<<<<<<< HEAD
->>>>>>> 469cec11215c26908d29e65ba0d3c3401fcca00b
-=======
->>>>>>> 469cec11215c26908d29e65ba0d3c3401fcca00b
       }
     }
   }
