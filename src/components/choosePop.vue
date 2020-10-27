@@ -4,12 +4,14 @@
     <div class="title">请选择你的操作</div>
     <div class="actions">
       <div @click="jumpToSignIn" class="action">登录</div>
-      <div class="action">注册</div>
+      <div @click="jumpToSignUp" class="action">注册</div>
     </div>
   </div>
 </template>
 
 <script>
+  import logPop from "./logPop";
+
   export default{
   	name :"choosePop",
   	components: {
@@ -24,6 +26,11 @@
       },
       jumpToSignIn:function () {
         this.$router.push({path: '/signIn'})
+      },
+      jumpToSignUp: function () {
+        if(logPop.data().identity === 'company'){
+          this.$router.push({path:'/comSignUp1'})
+        }
       }
     }
   }

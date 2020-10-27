@@ -21,6 +21,7 @@
     components: {},
     data() {
       return {
+        identity:''
       }
     },
     methods: {
@@ -30,11 +31,12 @@
       selectCom: function () {
         this.$parent.isChosen = !this.$parent.isChosen;
         this.$parent.logInPop = !this.$parent.logInPop;
+        this.identity = 'company';
       },
       selectBank: function () {
         this.$parent.isChosen = !this.$parent.isChosen;
         this.$parent.logInPop = !this.$parent.logInPop;
-
+        this.identity = 'bank' ;
       }
     }
   }
