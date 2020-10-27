@@ -30,11 +30,11 @@
       },
       selectCom: function () {
         this.$parent.isChosen = !this.$parent.isChosen;
-        this.logInPop = !this.logInPop;
+        this.$parent.logInPop = !this.$parent.logInPop;
       },
       selectBank: function () {
         this.$parent.isChosen = !this.$parent.isChosen;
-        this.logInPop = !this.logInPop;
+        this.$parent.logInPop = !this.$parent.logInPop;
 
       }
     }
@@ -46,8 +46,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1332px;
-    height: 704px;
+    width: 100%;
+    height: auto;
     background: rgba(112,112,112,0.65);
     border-radius: 15px;
   }
@@ -73,6 +73,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    height: auto;
     margin-top: 66px;
     margin-bottom: 60px;
   }

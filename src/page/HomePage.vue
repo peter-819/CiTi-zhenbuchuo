@@ -3,11 +3,11 @@
     <div
       style="width: 100%;height: 927px;background-color: #29282D;display: flex;flex-direction: column;align-items: center;justify-content: center">
       <heading style="position: absolute;top: 0" :activated="0"></heading>
-      <img src="static/HomePage/hrightup.png" style="width: 710px;height: 310px;top:0;right:30px;position: absolute;">
-      <img src="static/HomePage/hleft.png" style="width: 780px;height:500px;position: absolute;left: 17px;top: 246px;">
-      <img src="static/HomePage/hrightdown.png" style="width: 700px;height:450px;position: absolute;right: 0;top: 412px;">
+      <img src="static/HomePage/hrightup.png" style="width: 39%;height:auto;top:0;right:30px;position: absolute;">
+      <img src="static/HomePage/hleft.png" style="width: 40%;height:auto;position: absolute;left: 17px;top: 246px;">
+      <img src="static/HomePage/hrightdown.png" style="width: 36%;height:auto;position: absolute;right: 0;top: 412px;">
 
-      <div style="text-align: center">
+      <div style="text-align: center;width: 35%;height: auto">
         <p style="color: #FFFFFF;font-size: 56px;font-weight: 400;letter-spacing: 10px;opacity: 0.9;">这里是我们的Slogan</p>
         <p style="color: #FFFFFF;font-size: 30px;font-weight: 400;letter-spacing: 5px;opacity: 0.65;margin-top: 36px;">
           后疫情时代中小企业信贷系统</p>
@@ -15,12 +15,18 @@
 
       <div
         style="margin-top: 120px;display: flex;align-items: center;justify-content: center;flex-direction: column;">
-        <div
-          style="width: 233px;height: 63px;border: 3px solid #2CB8B9;border-radius: 10px;background: none;display: flex;align-items: center;justify-content: center;color: #2CB8B9;font-size: 24px;letter-spacing: 8px;"
+        <button
+          style="z-index:7;width: 233px;height: 63px;border: 3px solid #2CB8B9;border-radius: 10px;background: none;display: flex;align-items: center;justify-content: center;color: #2CB8B9;font-size: 24px;letter-spacing: 8px;"
           @click="showLogPop">
           LOGIN
-        </div>
+        </button>
         <img style="width: 59px;height: 27px;margin-top: 44px" src="static/HomePage/arrow_down.png"/>
+      </div>
+      <div style="z-index:77;position: absolute;display:flex;align-items:center;height: 704px;width: 70%;background-color: rgba(0,0,0,0.65);" v-if="logInPop">
+        <log-pop></log-pop>
+      </div>
+      <div style="z-index:777;position: absolute;display:flex;align-items:center;height: auto;width: 70%;background-color: rgba(0,0,0,0.65);" v-show="isChosen">
+        <choose-pop></choose-pop>
       </div>
     </div>
 
@@ -46,12 +52,7 @@
     </div>
     <div style="margin-top: 147px"><bottom></bottom></div>
 
-    <div style="position: absolute;top:149px;left:289px;right:289px;height: 704px;width: 70%;background-color: rgba(0,0,0,0.65);" v-if="logInPop">
-      <log-pop></log-pop>
-    </div>
-    <div style="position: absolute;top:149px;left:289px;right:289px;height: 704px;width: 70%;background-color: rgba(0,0,0,0.65);" v-if="isChosen">
-      <choose-pop></choose-pop>
-    </div>
+
   </div>
 
 </template>
@@ -106,6 +107,7 @@
     methods: {
       showLogPop: function () {
         this.logInPop = !this.logInPop ;
+        console.log(this.logInPop);
       }
 
     }
@@ -113,7 +115,9 @@
 </script>
 
 <style>
-
+  #HomePage{
+    position: relative;
+  }
   .introContexts {
     display: flex;
     -webkit-flex-direction: row;

@@ -14,7 +14,7 @@ import banksignup2 from "../page/banksignup2";
 import logpop from "../components/logPop.vue";
 import submitContract from "../components/Credit/submitContract";
 import bankLendRequire from "../page/bankLendRequire";
-import signin from "../page/signin.vue";
+import signin from "../page/signIn.vue";
 import choosepop from "../components/choosePop.vue";
 
 Vue.use(Router)

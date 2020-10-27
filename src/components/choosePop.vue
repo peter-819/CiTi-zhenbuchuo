@@ -1,9 +1,9 @@
 <template>
   <div class="container1">
-    <img  class="close" src="../../static/HomePage/close.png" />
+    <img  @click="closeChoosePop"  class="close" src="../../static/HomePage/close.png" />
     <div class="title">请选择你的操作</div>
     <div class="actions">
-      <div class="action">登录</div>
+      <div @click="jumpToSignIn" class="action">登录</div>
       <div class="action">注册</div>
     </div>
   </div>
@@ -16,6 +16,14 @@
   	},
     data() {
     },
+    methods:{
+  	  closeChoosePop:function () {
+        this.$parent.isChosen = !this.$parent.isChosen;
+      },
+      jumpToSignIn:function () {
+        this.$router.push({path: '/signIn'})
+      }
+    }
   }
 </script>
 
@@ -24,8 +32,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1332px;
-    height: 704px;
+    width: 100%;
+    height: auto;
     background: rgba(112,112,112,0.65);
     border-radius: 15px;
   }

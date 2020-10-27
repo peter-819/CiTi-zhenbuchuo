@@ -11,13 +11,13 @@
           </div>
           <img src="../../static/signup/xuxian.png"></img>
           <div class="hang1">
-            <div class="label1">输入密码</div>
-            <el-input v-model="password" placeholder="请输入密码" id="cinput"></el-input>
+            <div class="label2">输入密码</div>
+            <el-input v-model="password" placeholder="请输入密码" id="cinput" show-password></el-input>
           </div>
         </div>
 
         <div class="last">
-          <img class="button" src="../../static/signup/signin.png"></img>
+          <el-button style="background-color: #2CB8B9;margin-top: 32px;color: #FFFFFF;font-size:22px;width: 165px;height: 65px;border-radius: 10px" type="success">登 录</el-button>
         </div>
 
       </div>
@@ -28,7 +28,7 @@
 <script>
   import heading from "../components/heading.vue"
   	export default{
-  		name :"signin",
+  		name :"signIn",
   		components: {
   		  heading,
   		},
@@ -52,9 +52,8 @@
     flex-direction: column;
     align-items: center;
   	width: 75%;
-  	height: 900px;
-  	margin-top: 30px;
-    margin-bottom: 30px;
+  	height: 760px;
+  	margin-top: 50px;
     background-color: #F5F6FA;
     border:1px solid #2CB8B9;
     border-radius: 15px;
@@ -69,9 +68,9 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     width: 40%;
+     width: 542px;
      height: auto;
-     margin-top: 128px;
+     margin-top: 90px;
      background-color: #FFFFFF;
    }
    .inputkuai{
@@ -94,6 +93,12 @@
      margin-left: 50px;
      color: #707070;
    }
+  .label2{
+    width: 160px;
+    font-size: 22px;
+    margin-left: 65px;
+    color: #707070;
+  }
    #cinput{
      width: 70%;
      height: 40px;
@@ -112,10 +117,5 @@
     width:100%;
     height: 70px;
     margin-top: 54px;
-  }
-  .button{
-    width:13%;
-    height: auto;
-    margin-bottom: 45px;
   }
 </style>
