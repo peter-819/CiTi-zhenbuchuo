@@ -7,10 +7,10 @@
       <div class="container1">
         <div class="title">用户注册</div>
         <div class="progress">
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-          <img src="../../static/signup/bline.png" class="line"></img>
-          <img src="../../static/signup/bline.png" class="line"> </img>
-          <img src="../../static/signup/bpoint.png" class="point"></img>
+          <img src="../../static/signup/bpoint.png" class="point">
+          <img src="../../static/signup/bline.png" class="line">
+          <img src="../../static/signup/bline.png" class="line">
+          <img src="../../static/signup/bpoint.png" class="point">
         </div>
         <div class="progress_name">
           <div class="text1" style="margin-right: 100px;">个人信息</div>
@@ -21,7 +21,7 @@
             <div class="label1">设置密码</div>
             <el-input v-model="password1" placeholder="请输入密码" id="cinput" show-password></el-input>
           </div>
-          <img src="../../static/signup/xuxian.png"></img>
+          <img src="../../static/signup/xuxian.png">
           <div class="hang1">
             <div class="label1">确认密码</div>
             <el-input v-model="password2" placeholder="请输入密码" id="cinput" show-password></el-input>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="last">
-          <img @click="backTo2" class="button" src="../../static/signup/last.png"></img>
+          <img @click="backTo1" class="button" src="../../static/signup/last.png"></img>
           <img @click="signup" class="button" src="../../static/signup/finished.png"></img>
         </div>
 
@@ -62,35 +62,13 @@
         console.log(this.$data.email)
     },
     methods: {
-      backTo2: function() {
+      backTo1: function() {
         this.$router.push({
-          path: '/bankSignUp2'
+          path: '/bankSignUp1'
         })
       },
       signup: function() {
         let vm = this
-        /*        this.$http.post(
-                  'http://host.tanhuiri.cn:19527/registration/bank',
-                  // 请求体重发送数据给服务端
-                  {
-                    "bankName": "zhongguoyinhang",
-                    "email": vm.$data.email,
-                    "name": vm.$data.name,
-                    "password": vm.$data.password1,
-                    "phone": vm.$data.tel,
-                    "position": vm.$data.position,
-                    "workCertificateUrl": "44444444"
-                  }, {
-                    'headers': {
-                      'Content-Type': 'application/json'
-                    }
-                  }).then(function() {
-                  // 成功回调
-                  console.log("注册成功！")
-                }, function() {
-                  // 失败回调
-                }); */
-
         this.$http({
           url: 'http://host.tanhuiri.cn:19527/registration/bank',
           method: 'POST',

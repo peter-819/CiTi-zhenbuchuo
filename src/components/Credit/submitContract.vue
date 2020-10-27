@@ -15,6 +15,7 @@
           action="https://jsonplaceholder.typicode.com/posts/"
           ref="upload"
           multiple
+          :on-change="fileListOnChange"
           :on-success="handleSuccess"
           :before-upload="beforeUpload"
           :on-preview="handlePreview"
@@ -27,6 +28,8 @@
         </el-upload>
       </div>
       <el-button style="background-color: #2CB8B9;margin-top: 32px;color: #FFFFFF;font-size:22px;width: 130px;height: 46px;border-radius: 10px" type="success" @click="submitUpload">提交</el-button>
+      <el-button style="background-color: #2CB8B9;margin-top: 32px;color: #FFFFFF;font-size:22px;width: 130px;height: 46px;border-radius: 10px" type="success" @click="getPolicy">测试getPolicy接口</el-button>
+      <el-button style="background-color: #2CB8B9;margin-top: 32px;color: #FFFFFF;font-size:22px;width: 130px;height: 46px;border-radius: 10px" type="success" @click="uploadFile">测试上传</el-button>
     </div>
   </div>
 </template>
@@ -36,12 +39,58 @@
         name: "submitContract",
       data(){
         return{
+          policyData: null,
           fileList:[]
         }
       },
         methods:{
+          uploadFile() {
+            var formData = new FormData();
+            formData.append("OSSAccessKeyid", this.policyData.accessid);
+            formData.append("key", this.policyData.dir + Date.parse(new Date()) + ".jpg");
+            formData.append("policy", this.policyData.policy);
+            formData.append("success_action_status", '200');
+            formData.append("signature", this.policyData.signature);
+            formData.append("file", this.fileList[0].raw);
+            this.$ajax.post(
+              this.policyData.host,
+              formData
+            )
+            .then(
+              result => {
+                console.log(result.status)
+              }
+            )
+            .catch(
+              function (result) {
+                console.log(result)
+              }
+            )
+          },
+          getPolicy() {
+            console.log(this.fileList)
+            console.log(Date.parse(new Date()) + ".jpg")
+            this.$ajax.get('http://host.tanhuiri.cn:19527/policy/image')
+            .then(
+              result => {
+                this.policyData = result.data.data
+                console.log(result.data.data)
+              }
+            )
+            .catch(
+              function (result) {
+                console.log(result)
+              }
+            )
+          },
           submitUpload() {
             this.$refs.upload.submit();
+          },
+          // 用户选择文件的的闭包
+          fileListOnChange(file, fileList) {
+            // console.log(file)
+            // console.log(fileList)
+            this.fileList.push(file)
           },
           handleRemove(file, fileList) {
             console.log(file, fileList);

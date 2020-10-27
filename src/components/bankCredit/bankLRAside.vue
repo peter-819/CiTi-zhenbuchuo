@@ -1,5 +1,5 @@
 <template>
-  <div id="creditAside">
+  <div id="bankAside">
     <div>
       <div v-for="(item,index) in blockList" :class="selectedIndex===index ? clickedBC : defaultBC" @click="onclicked(index)">
         <img :src="item.ImageSrc" style="height:66px;width:66px">
@@ -22,7 +22,7 @@
       defaultCC : 'context',
       blockList : [
         {context:'处理借贷事务', ImageSrc:'/static/CreditHomePage/lendRequire.png'},
-        {context:'社会神经网络', ImageSrc:'/static/CreditHomePage/network.png'},
+        {context:'企业社会网络', ImageSrc:'/static/CreditHomePage/network.png'},
       ]
     }
   },
@@ -36,9 +36,9 @@
 </script>
 
 <style scoped>
-  #creditAside{
+  #bankAside{
     width: 345px;
-    height: 400px;
+    height: 160px;
     display: flex;
     flex-direction: column;
     position: absolute;
