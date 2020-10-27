@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '../page/HomePage'
+import Vueresource from 'vue-resource'
 import neo4j from "../page/neo4j";
 
 import ClickCreditWithoutLogin from "../page/ClickCreditWithoutLogin";
@@ -18,6 +19,7 @@ import signIn from "../page/signIn.vue";
 import choosePop from "../components/choosePop.vue";
 
 Vue.use(Router)
+Vue.use(Vueresource)
 
 export default new Router({
   routes: [

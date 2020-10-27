@@ -22,7 +22,7 @@
             <div v-for="(item,index) in input" class="inputBlock" :key="index">
               <div class="hang1">
                 <div class="label1">{{item.name}}</div>
-                <el-input v-model="item.modelname" :placeholder="item.ph" id="cinput"></el-input>
+                <el-input v-model="item.getInfo" :placeholder="item.ph" id="cinput"></el-input>
               </div>
               <img src="../../static/signup/xuxian.png" width="85%">
             </div>
@@ -60,15 +60,18 @@
     data() {
       return {
         input:[
-          {name:"企业名称", modelname:"", ph:"请输入企业名称"},
-          {name:"企业规模", modelname:"", ph:"(大/中/小）"},
-          {name:"工商注册信息", modelname:"", ph:"请输入工商注册信息"},
-          {name:"企业法人", modelname:"", ph:"请输入企业法人"},
-          {name:"注册资本", modelname:"", ph:"请输入注册资本"},
-          {name:"行业分类", modelname:"", ph:"请输入行业分类"},
-          {name:"公司地址", modelname:"", ph:"请输入公司地址"},
-          {name:"公司电话", modelname:"", ph:"请输入公司联系电话"},
+          {name:"企业名称", getInfo:"", ph:"请输入企业名称"},
+          {name:"企业规模", getInfo:"", ph:"(大/中/小）"},
+          {name:"工商注册信息", getInfo:"", ph:"请输入工商注册信息"},
+          {name:"企业法人", getInfo:"", ph:"请输入企业法人"},
+          {name:"注册资本", getInfo:"", ph:"请输入注册资本"},
+          {name:"行业分类", getInfo:"", ph:"请输入行业分类"},
+          {name:"公司地址", getInfo:"", ph:"请输入公司地址"},
+          {name:"公司电话", getInfo:"", ph:"请输入公司联系电话"},
         ],
+        name : this.$route.query.name,
+        email : this.$route.query.email,
+        tel : this.$route.query.tel,
       }
     },
     methods:{
@@ -76,7 +79,22 @@
         this.$router.push({path:'/comSignUp1'})
       },
       jumpTo3:function () {
-        this.$router.push({path:'/comSignUp3'})
+        this.$router.push({
+          path:'/comSignUp3',
+          query:{
+            name:this.data.name,
+            eamil:this.data.eamil,
+            tel:this.data.tel,
+            cname:this.$data.input[0].getInfo,
+            scale:this.$data.input[1].getInfo,
+            registerInfo:this.$data.input[2].getInfo,
+            legalPeople:this.$data.input[3].getInfo,
+            capital:this.$data.input[4].getInfo,
+            kind:this.$data.input[5].getInfo,
+            conAddress:this.$data.input[6].getInfo,
+            comtel:this.$data.input[7].getInfo,
+          }
+        })
       }
     }
   }

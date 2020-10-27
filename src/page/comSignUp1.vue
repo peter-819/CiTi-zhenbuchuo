@@ -20,7 +20,7 @@
           <div v-for="(item,index) in input" class="inputkuai" :key="index">
             <div class="hang1">
               <div class="label1">{{item.name}}</div>
-              <el-input v-model="item.modelname" :placeholder="item.ph" id="cinput"></el-input>
+              <el-input v-model="item.getInfo" :placeholder="item.ph" id="cinput"></el-input>
             </div>
             <img src="../../static/signup/xuxian.png" width="85%"></img>
           </div>
@@ -58,15 +58,26 @@
     data() {
       return {
         input:[
-          {name:"姓名", modelname:"", ph:"请输入您的姓名"},
-          {name:"邮箱", modelname:"", ph:"请输入您的邮箱"},
-          {name:"联系电话", modelname:"", ph:"请输入您的联系电话"},
+          {name:"姓名", getInfo:"", ph:"请输入您的姓名"},
+          {name:"邮箱", getInfo:"", ph:"请输入您的邮箱"},
+          {name:"联系电话", getInfo:"", ph:"请输入您的联系电话"},
         ],
       }
     },
+
     methods:{
+      onShow:function(){
+        console.log(this.$data.input[0].getInfo)
+      },
 		  jumpTo2:function () {
-        this.$router.push({path:'/comSignUp2'})
+        this.$router.push({
+          path:'/comSignUp2',
+          query:{
+            name:this.$data.input[0].getInfo,
+            email:this.$data.input[1].getInfo,
+            tel:this.$data.input[2].getInfo,
+            }
+          })
       },
       backToHome:function(){
         this.$router.push({path:'/'})
