@@ -39,8 +39,8 @@
         </div>
 
         <div class="last">
-          <img class="button" src="../../static/signup/last.png"></img>
-          <img class="button" src="../../static/signup/next.png"></img>
+          <img @click="backToHome" class="button" src="../../static/signup/last.png"></img>
+          <img @click="jumpTo2" class="button" src="../../static/signup/next.png"></img>
         </div>
 
       </div>
@@ -51,7 +51,7 @@
 <script>
 	import heading from "../components/heading.vue"
 	export default{
-		name :"comsignup1",
+		name :"comSignUp1",
 		components: {
 		  heading,
 		},
@@ -64,6 +64,14 @@
         ],
       }
     },
+    methods:{
+		  jumpTo2:function () {
+        this.$router.push({path:'/comSignUp2'})
+      },
+      backToHome:function(){
+        this.$router.push({path:'/'})
+      }
+    }
 	}
 </script>
 
@@ -133,7 +141,7 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     width: 40%;
+     width: 542px;
      height: auto;
      margin-top: 45px;
      background-color: #FFFFFF;
@@ -171,7 +179,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    width: 542px;
     height: 325px;
     margin-top: 20px;
     background-color: #FFFFFF;

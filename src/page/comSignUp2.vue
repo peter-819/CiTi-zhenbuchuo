@@ -5,11 +5,11 @@
       <div class="container1">
         <div class="title">用户注册</div>
         <div class="progress">
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-          <img src="../../static/signup/bline.png" class="line"></img>
-          <img src="../../static/signup/bpoint.png" class="point"></img>
-          <img src="../../static/signup/gline.png" class="line"> </img>
-          <img src="../../static/signup/gpoint.png" class="point"></img>
+          <img src="../../static/signup/bpoint.png" class="point">
+          <img src="../../static/signup/bline.png" class="line">
+          <img src="../../static/signup/bpoint.png" class="point">
+          <img src="../../static/signup/gline.png" class="line">
+          <img src="../../static/signup/gpoint.png" class="point">
         </div>
         <div class="progress_name">
           <div class="text1">个人信息</div>
@@ -19,30 +19,30 @@
 
         <div class="form1">
           <div class="inputs">
-            <div v-for="(item,index) in input" class="inputkuai" :key="index">
+            <div v-for="(item,index) in input" class="inputBlock" :key="index">
               <div class="hang1">
                 <div class="label1">{{item.name}}</div>
                 <el-input v-model="item.modelname" :placeholder="item.ph" id="cinput"></el-input>
               </div>
-              <img src="../../static/signup/xuxian.png" width="85%"></img>
+              <img src="../../static/signup/xuxian.png" width="85%">
             </div>
           </div>
           <div class="details" style="height: 100%;">
-            <img src="../../static/signup/question.png" style="margin-top: 85px;"></img>
-            <img src="../../static/signup/question.png"style="margin-top: 230px;"></img>
+            <img src="../../static/signup/question.png" style="margin-top: 85px;">
+            <img src="../../static/signup/question.png"style="margin-top: 230px;">
           </div>
         </div>
 
         <div class="form2">
           <div class="hang2">
             <div class="label2">上传营业执照</div>
-            <img class="IDCard" src="../../static/signup/card.png"></img>
+            <img class="IDCard" src="../../static/signup/card.png">
           </div>
         </div>
 
         <div class="last">
-          <img class="button" src="../../static/signup/last.png"></img>
-          <img class="button" src="../../static/signup/next.png"></img>
+          <img  @click="backTo1" class="button" src="../../static/signup/last.png">
+          <img  @click="jumpTo3" class="button" src="../../static/signup/next.png">
         </div>
 
       </div>
@@ -53,7 +53,7 @@
 <script>
   import heading from "../components/heading.vue"
   export default{
-  	name :"comsignup2",
+  	name :"comSignUp2",
   	components: {
   	  heading,
   	},
@@ -71,6 +71,14 @@
         ],
       }
     },
+    methods:{
+  	  backTo1: function () {
+        this.$router.push({path:'/comSignUp1'})
+      },
+      jumpTo3:function () {
+        this.$router.push({path:'/comSignUp3'})
+      }
+    }
   }
 </script>
 
@@ -141,12 +149,12 @@
    .form1{
      display: flex;
      flex-direction: row;
-     width: 40%;
-     height: auto;
+     width: 542px;
+     height: 500px;
      margin-top: 45px;
      background-color: #FFFFFF;
    }
-   .inputkuai{
+   .inputBlock{
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -189,7 +197,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    width: 542px;
     height: 170px;
     margin-top: 20px;
     background-color: #FFFFFF;
