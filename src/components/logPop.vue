@@ -21,7 +21,6 @@
     components: {},
     data() {
       return {
-        open: true
       }
     },
     methods: {

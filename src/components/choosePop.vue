@@ -15,6 +15,8 @@
   	components: {
   	},
     data() {
+  	  return{
+      }
     },
     methods:{
   	  closeChoosePop:function () {
