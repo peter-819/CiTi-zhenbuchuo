@@ -51,7 +51,12 @@
               }
             }
           ).then(function(res){
-            console.log(res);
+            if(res.body.code == '00000'){
+              console.log("login success");
+              this.$router.push({
+                path:'/CreditHomePage'
+              });
+            }
           }).catch(function(res){
             console.log(res);
           });
