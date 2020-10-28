@@ -13,7 +13,8 @@
           style="display:flex;flex-direction:column;align-items:center;justify-content: center;margin-top: 150px"
           ref="upload"
           multiple
-          :on-change="handleChange"s
+          action="#"
+          :on-change="handleChange"
           :on-success="handleSuccess"
           :before-upload="beforeUpload"
           :on-preview="handlePreview"
@@ -36,7 +37,7 @@
         name: "submitContract",
       data(){
         return{
-          policyData: null,
+          policyData: {},
           fileList:[]
         }
       },
@@ -67,23 +68,22 @@
           getPolicy() {
             console.log(this.fileList)
             console.log(Date.parse(new Date()) + ".jpg")
-            this.$ajax.get('http://host.tanhuiri.cn:19527/policy/image')
+            return this.$ajax.get('http://host.tanhuiri.cn:19527/policy/image')
             .then(
               result => {
                 this.policyData = result.data.data
-                console.log(result.data.data)
-              }
-            )
-            .catch(
-              function (result) {
-                console.log(result)
               }
             )
           },
           submitUpload() {
             this.$refs.upload.submit();
-            this.getPolicy()
-            this.uploadFile()
+            this.getPolicy().then(
+              ()=>{this.uploadFile();}
+            ).catch(
+              function (result) {
+                console.log(result)
+              }
+            )
           },
           // 用户选择文件的的闭包
           handleChange(file, fileList) {
