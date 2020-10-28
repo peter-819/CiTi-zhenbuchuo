@@ -40,10 +40,12 @@
     border-radius: 31px;
   }
   .container{
-  width: 70%;
-  height: 885px;
-  background: #FFFFFF;
-  opacity: 1;
-  border-radius: 15px;
+    width: 1365px;
+    height: 800px;
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 15px;
+    margin-top: 23px;
+    margin-left: 280px;
   }
 </style>
