@@ -25,7 +25,12 @@
         this.$parent.isChosen = !this.$parent.isChosen;
       },
       jumpToSignIn: function () {
-        this.$router.push({path: '/signIn'})
+        if(this.$parent.temp === 'company'){
+          this.$router.push({name: 'signIn',params:{identify:'company'}})
+        }
+        else if(this.$parent.temp === 'bank'){
+          this.$router.push({name:'signIn',params:{identify:'bank'}});
+        }
       },
       jumpToSignUp: function () {
         if(this.$parent.temp === 'company'){

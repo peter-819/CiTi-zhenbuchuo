@@ -37,7 +37,11 @@
         return {
           account:"",
           password:"",
+          identify:""
         }
+      },
+      created(){
+        this.identify = this.$route.params.identify;
       },
       methods:{
         signup(){
@@ -51,6 +55,7 @@
               }
             }
           ).then(function(res){
+            console.log(_this.identify)
             if(res.body.code == '00000'){
               console.log("login success");
               this.$router.push({
