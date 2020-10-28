@@ -69,11 +69,11 @@
       },
       signup: function() {
         let vm = this
-        this.$http({
-          url: 'http://host.tanhuiri.cn:19527/registration/bank',
-          method: 'POST',
+        console.log(vm.$data);
+        this.$http.post(
+          'http://host.tanhuiri.cn:19527/registration/bank',
           // 请求体重发送的数据
-          data: {
+          {
             "bankName": "zhongguoyinhang",
             "email": vm.$data.email,
             "name": vm.$data.name,
@@ -83,12 +83,12 @@
             "workCertificateUrl": "44444444"
           },
           // 设置请求头
-          headers: {
+          {
             'Content-Type': 'application/json'
           }
-        }).then(function() {
+        ).then(function(res) {
           // 请求成功回调
-          console.log("注册成功！")
+          console.log(res);
         }, function() {
           // 请求失败回调
         });
