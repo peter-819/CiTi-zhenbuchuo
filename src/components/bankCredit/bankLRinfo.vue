@@ -3,10 +3,9 @@
     <div class="search">
       <el-input  v-model="search_key" placeholder="   搜索借贷请求" id="searchinput"></el-input>
     </div>
-    <el-menu :default-active="this.$route.path" mode="horizontal"  @open="handleOpen" @close="handleClose" style="background-color: #F5F6FA;position: absolute;left:44%;top:200px">
-      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
+    <el-menu :default-active="this.$route.path" mode="horizontal"  @open="handleOpen" @close="handleClose" style="background-color: #F5F6FA;position: absolute;left:48%;top:200px">
+      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name" :style="item.style">
         <template slot="title">
-          <i class="el-icon-s-platform"></i>
           <span> {{ item.navItem }}</span>
         </template>
       </el-menu-item>
@@ -51,9 +50,9 @@
         {comname:"三四五六七八股份有限公司",Rmount:"39",Lmount:"60",already:"10",surplus:"50",time:"2020年9月8日20：00",status:"1"},
         ],
         navList:[
-          {name:'/components/ServiceHall',navItem:'全部'},
-          {name:'/components/Management',navItem:'未处理'},
-          {name:'/components/User',navItem:'已处理'},
+          {name:'/components/ServiceHall',navItem:'全部',style:'font-size:20px;font-weight:600'},
+          {name:'/components/Management',navItem:'未处理',style:'margin-left: 100px;font-size:20px;font-weight:600'},
+          {name:'/components/User',navItem:'已处理',style:'margin-left: 100px;font-size:20px;font-weight:600'},
         ] }
     },
     methods: {
@@ -163,5 +162,8 @@
     font-family: Source Han Sans CN;
     font-weight: 400;
     color: #707070;
+  }
+  .waitForDeal{
+    margin-left: 100px;
   }
 </style>

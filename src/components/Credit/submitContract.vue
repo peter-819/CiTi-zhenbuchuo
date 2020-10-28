@@ -14,9 +14,10 @@
           ref="upload"
           multiple
           action="#"
+          accept=".jpg,.pdf.,.png"
           :on-change="handleChange"
-          :on-success="handleSuccess"
           :before-upload="beforeUpload"
+          :before-remove="beforeRemove"
           :on-preview="handlePreview"
           :on-remove="handleRemove"
           :file-list="fileList"
@@ -26,8 +27,6 @@
         </el-upload>
       </div>
       <el-button style="background-color: #2CB8B9;margin-top: 32px;color: #FFFFFF;font-size:22px;width: 130px;height: 46px;border-radius: 10px" type="success" @click="submitUpload">提交</el-button>
-      <el-button style="background-color: #2CB8B9;margin-top: 32px;color: #FFFFFF;font-size:22px;width: 130px;height: 46px;border-radius: 10px" type="success" @click="getPolicy">测试getPolicy接口</el-button>
-      <el-button style="background-color: #2CB8B9;margin-top: 32px;color: #FFFFFF;font-size:22px;width: 130px;height: 46px;border-radius: 10px" type="success" @click="uploadFile">测试上传</el-button>
     </div>
   </div>
 </template>
@@ -37,21 +36,21 @@
         name: "submitContract",
       data(){
         return{
-          policyData: {},
           fileList:[]
         }
       },
         methods:{
-          uploadFile() {
+          uploadFile(item,policyData) {
+            console.log(item);
             var formData = new FormData();
-            formData.append("OSSAccessKeyid", this.policyData.accessid);
-            formData.append("key", this.policyData.dir + Date.parse(new Date()) + ".jpg");
-            formData.append("policy", this.policyData.policy);
+            formData.append("OSSAccessKeyid", policyData.accessid);
+            formData.append("key", policyData.dir + Date.parse(new Date()) + this.getSuffix(item));
+            formData.append("policy", policyData.policy);
             formData.append("success_action_status", '200');
-            formData.append("signature", this.policyData.signature);
-            formData.append("file", this.fileList.raw);
+            formData.append("signature", policyData.signature);
+            formData.append("file", item.raw);
             this.$ajax.post(
-              this.policyData.host,
+              policyData.host,
               formData
             )
             .then(
@@ -65,25 +64,29 @@
               }
             )
           },
-          getPolicy() {
-            console.log(this.fileList)
-            console.log(Date.parse(new Date()) + ".jpg")
-            return this.$ajax.get('http://host.tanhuiri.cn:19527/policy/image')
-            .then(
-              result => {
-                this.policyData = result.data.data
-              }
-            )
+          getPolicy(item) {
+            if(this.getSuffix(item) == '.jpg' || this.getSuffix(item) == '.png') {
+              return this.$ajax.get('http://host.tanhuiri.cn:19527/policy/image');
+            }
+            else{
+              return this.$ajax.get('http://host.tanhuiri.cn:19527/policy/file');
+            }
           },
           submitUpload() {
-            this.$refs.upload.submit();
-            this.getPolicy().then(
-              ()=>{this.uploadFile();}
-            ).catch(
-              function (result) {
-                console.log(result)
-              }
-            )
+            for(let item of this.fileList){
+              // this.$refs.upload.submit();
+              this.getPolicy(item).then(
+                (res)=>{this.uploadFile(item,res.data.data);}
+              ).then((res)=>{
+                this.fileList.splice(0,this.fileList.length);
+              })
+              .catch(
+                function (result) {
+                  console.log(result)
+                }
+              )
+            }
+
           },
           // 用户选择文件的的闭包
           handleChange(file, fileList) {
@@ -95,26 +98,30 @@
             this.fileList.splice(this.fileList.indexOf(file),1)
             console.log(file, fileList);
           },
+          beforeRemove(file, fileList) {
+            return this.$confirm(`确定移除 ${ file.name }？`);
+          },
           handlePreview(file) {
             console.log(file);
           },
-          handleSuccess(res, file) {
-            this.url = URL.createObjectURL(file.raw);
-          },
           beforeUpload(file){
-            const isJPG = file.type === 'image/jpg';
-            const isPNG = file.type === 'image/png';
-            const isPDF = file.type === 'text/pdf'
+            var suffix = this.getSuffix(file)
+            const isJPG = suffix === 'jpg'
+            const isPNG = suffix === 'png'
+            const isPDF = suffix === 'pdf'
             const isLt10M = file.size / 1024 / 1024 < 10;
-
             if (!isJPG && !isPNG && !isPDF) {
-              this.$message.error('请上传正确格式的文件');
+              this.$message.error('上传文件只能是jpg，png或pdf格式!');
             }
             if (!isLt10M) {
               this.$message.error('上传文件大小不能超过10MB!');
             }
-            return (isJPG || isPDF || isPNG) && isLt10M;
+            return isLt10M;
+          },
+          getSuffix(file){
+            return '.' + file.name.substring(file.name.lastIndexOf('.')+1)
           }
+
       }
     }
 </script>
