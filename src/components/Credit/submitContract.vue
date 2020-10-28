@@ -11,19 +11,16 @@
         </div>
         <el-upload
           style="display:flex;flex-direction:column;align-items:center;justify-content: center;margin-top: 150px"
-          drag
-          action="https://jsonplaceholder.typicode.com/posts/"
           ref="upload"
           multiple
-          :on-change="fileListOnChange"
+          :on-change="handleChange"s
           :on-success="handleSuccess"
           :before-upload="beforeUpload"
           :on-preview="handlePreview"
           :on-remove="handleRemove"
           :file-list="fileList"
           :auto-upload="false">
-          <i class="el-icon-upload"></i>
-          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+          <div class="el-upload__text"><em>点击上传</em></div>
           <div class="el-upload__tip" slot="tip">只能上传jpg/png/pdf文件，且不超过10MB</div>
         </el-upload>
       </div>
@@ -51,7 +48,7 @@
             formData.append("policy", this.policyData.policy);
             formData.append("success_action_status", '200');
             formData.append("signature", this.policyData.signature);
-            formData.append("file", this.fileList[0].raw);
+            formData.append("file", this.fileList.raw);
             this.$ajax.post(
               this.policyData.host,
               formData
@@ -85,14 +82,17 @@
           },
           submitUpload() {
             this.$refs.upload.submit();
+            this.getPolicy()
+            this.uploadFile()
           },
           // 用户选择文件的的闭包
-          fileListOnChange(file, fileList) {
-            // console.log(file)
-            // console.log(fileList)
+          handleChange(file, fileList) {
+            console.log(file)
+            console.log(fileList)
             this.fileList.push(file)
           },
           handleRemove(file, fileList) {
+            this.fileList.splice(this.fileList.indexOf(file),1)
             console.log(file, fileList);
           },
           handlePreview(file) {
@@ -107,7 +107,7 @@
             const isPDF = file.type === 'text/pdf'
             const isLt10M = file.size / 1024 / 1024 < 10;
 
-            if (!isJPG & !isPNG && !isPDF) {
+            if (!isJPG && !isPNG && !isPDF) {
               this.$message.error('请上传正确格式的文件');
             }
             if (!isLt10M) {
