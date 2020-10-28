@@ -17,7 +17,8 @@
         </div>
 
         <div class="last">
-          <el-button style="background-color: #2CB8B9;margin-top: 32px;color: #FFFFFF;font-size:22px;width: 165px;height: 65px;border-radius: 10px" type="success">登 录</el-button>
+          <el-button style="background-color: #2CB8B9;margin-top: 32px;color: #FFFFFF;font-size:22px;width: 165px;height: 65px;border-radius: 10px"
+           type="success" @click="signup">登 录</el-button>
         </div>
 
       </div>
@@ -38,6 +39,24 @@
           password:"",
         }
       },
+      methods:{
+        signup(){
+          let _this = this;
+          this.$http.get(
+            'http://host.tanhuiri.cn:19527/login/bank',
+            {
+              params:{
+                "password":_this.password,
+                "userName":_this.account
+              }
+            }
+          ).then(function(res){
+            console.log(res);
+          }).catch(function(res){
+            console.log(res);
+          });
+        }
+      }
   	}
 </script>
 
