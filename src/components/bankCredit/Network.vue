@@ -4,14 +4,16 @@
       <el-input  v-model="search_key" placeholder="   搜索企业名称" id="searchinput"></el-input>
     </div>
     <div class="container">
-      <div class="chart"></div>
+        <charts></charts>
     </div>
   </div>
 </template>
 
 <script>
+  import charts from "../../page/charts";
   export default {
     name: "Network",
+    components: {charts},
     data(){
       return {
         search_key:"",

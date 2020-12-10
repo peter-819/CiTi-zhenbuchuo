@@ -1,5 +1,5 @@
 <template>
-  <div id="charts" style="width:100%;height:1000px">
+  <div id="charts" style="width:100%;height:100%">
 
   </div>
 </template>
@@ -62,8 +62,8 @@
 
         let option = {
           title: {
-            text: 'test',
-            subtext: 'Default layout',
+            text: 'SocialNetWork',
+            subtext: '',
             top: 'bottom',
             left: 'right'
           },
@@ -78,15 +78,17 @@
           animationEasingUpdate: 'quinticInOut',
           series: [
             {
-              name: 'Les Miserables',
+              name: 'Enterprise',
               type: 'graph',
               layout: 'force',
               data: graph.nodes,
               links: graph.links,
               categories: categories,
+              zoom: 2.5,
               roam: true,
               focusNodeAdjacency: true,
               draggable: true,
+              edgeSymbol: ['none','arrow'],
               itemStyle: {
                 borderColor: '#fff',
                 borderWidth: 1,
@@ -104,87 +106,39 @@
               emphasis: {
                 lineStyle: {
                   width: 10
+                },
+                edgeLabel: {
+                  show: true,
+                  formatter: params => {
+                    return params.data.name
+                  }
                 }
               },
               force: {
                 edgeLength: 100
+              },
+              tooltip: {
+                enterable: true,
+                extraCssText: 'white-space:pre-wrap',
+                formatter: (params) => {
+                  if(params.dataType === "edge"){
+                    let properties = params.data.properties
+                    let str = params.data.name + "\n"
+                    for(let p in properties){
+                      str = str + p + ":" + properties[p] + "\n"
+                    }
+                    return str
+                  }
+                  if (params.dataType === "node"){
+                    let str = params.data.fullName + "\n"
+                    return str
+                  }
+                }
               }
             }
           ]
         };
         myChart.setOption(option);
-
-        // axios.get('http://localhost:8080/static/charts/les-miserables.gexf').then(function (xml) {
-        //
-        //   var graph = echarts.dataTool.gexf.parse(xml.data);
-        //   var categories = [];
-        //   for (var i = 0; i < 9; i++) {
-        //     categories[i] = {
-        //       name: '类目' + i
-        //     };
-        //   }
-        //   graph.nodes.forEach(function (node) {
-        //     node.itemStyle = null;
-        //     node.value = node.symbolSize;
-        //     node.symbolSize /= 1.5;
-        //     node.label = {
-        //       show: node.symbolSize > 30
-        //     };
-        //     node.category = node.attributes.modularity_class;
-        //   });
-        //   console.log(graph.links)
-        //   var option = {
-        //     title: {
-        //       text: 'Les Miserables',
-        //       subtext: 'Default layout',
-        //       top: 'bottom',
-        //       left: 'right'
-        //     },
-        //     tooltip: {},
-        //     legend: [{
-        //       // selectedMode: 'single',
-        //       data: categories.map(function (a) {
-        //         return a.name;
-        //       })
-        //     }],
-        //     animationDuration: 1500,
-        //     animationEasingUpdate: 'quinticInOut',
-        //     series: [
-        //       {
-        //         name: 'Les Miserables',
-        //         type: 'graph',
-        //         layout: 'none',
-        //         data: graph.nodes,
-        //         links: graph.links,
-        //         categories: categories,
-        //         roam: true,
-        //         focusNodeAdjacency: true,
-        //         itemStyle: {
-        //           borderColor: '#fff',
-        //           borderWidth: 1,
-        //           shadowBlur: 10,
-        //           shadowColor: 'rgba(0, 0, 0, 0.3)'
-        //         },
-        //         label: {
-        //           position: 'right',
-        //           formatter: '{b}'
-        //         },
-        //         lineStyle: {
-        //           color: 'source',
-        //           curveness: 0.2
-        //         },
-        //         emphasis: {
-        //           lineStyle: {
-        //             width: 10
-        //           }
-        //         }
-        //       }
-        //     ]
-        //   };
-        //   myChart.setOption(option);
-        // }).catch(err => {
-        //   console.log(err);
-        // });
       }
     }
   }
