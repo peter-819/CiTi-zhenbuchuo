@@ -43,28 +43,57 @@
       created(){
         this.identify = this.$route.params.identify;
       },
+      mounted() {
+        console.log(this.identify)
+      },
       methods:{
         signup(){
           let _this = this;
-          this.$http.get(
-            'http://host.tanhuiri.cn:19527/login/bank',
-            {
-              params:{
-                "password":_this.password,
-                "userName":_this.account
+          if (this.identify === "bank"){
+            this.$http.get(
+              'http://127.0.0.1:19527/login/bank',
+              {
+                params:{
+                  "password":_this.password,
+                  "userName":_this.account
+                }
               }
-            }
-          ).then(function(res){
-            console.log(_this.identify)
-            if(res.body.code == '00000'){
-              console.log("login success");
-              this.$router.push({
-                path:'/CreditHomePage'
-              });
-            }
-          }).catch(function(res){
-            console.log(res);
-          });
+            ).then(function(res){
+              console.log(_this.identify)
+              if(res.body.code === '00000'){
+                console.log("login success");
+                this.$router.push({
+                  path:'/bankLendRequire'
+                });
+              }
+            }).catch(function(res){
+              console.log(res);
+            });
+          } else {
+            this.$http.get(
+              'http://127.0.0.1:19527/login/enterprise',
+              {
+                params:{
+                  "password":_this.password,
+                  "userName":_this.account
+                }
+              }
+            ).then(function(res){
+              console.log(_this.identify)
+              if(res.body.code === '00000'){
+                console.log("login success");
+                this.$router.push({
+                  path:'/bankLendRequire'
+                });
+              }
+            }).catch(function(res){
+              console.log(res);
+            });
+            this.$router.push({
+              path:'/CreditHomePage'
+            });
+          }
+          location.reload();
         }
       }
   	}

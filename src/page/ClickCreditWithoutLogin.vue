@@ -6,9 +6,11 @@
           :activated="1">
         </heading>
       </div>
-      <div class="loginFirst" style="margin-top: 160px;">请先登陆 / 注册以查看更多</div>
-      <div class ="reminder" style="margin-top: 50px">
-        <img src="/static/ClickCreditWithoutLogin/undraw_reminder_pa79.png" style="width: 650px;height: 520px;">
+      <div >
+        <div class="loginFirst" style="margin-top: 160px;">请先登陆 / 注册以查看更多</div>
+        <div class ="reminder" style="margin-top: 50px">
+          <img src="/static/ClickCreditWithoutLogin/undraw_reminder_pa79.png" style="width: 650px;height: 520px;">
+        </div>
       </div>
     </div>
 </template>

@@ -71,7 +71,7 @@
         let vm = this
         console.log(vm.$data);
         this.$http.post(
-          'http://host.tanhuiri.cn:19527/registration/bank',
+          'http://127.0.0.1:19527/registration/bank',
           // 请求体重发送的数据
           {
             "bankName": "zhongguoyinhang",

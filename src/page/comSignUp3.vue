@@ -75,7 +75,7 @@
       },
       signup: function() {
         this.$http({
-          url: 'http://host.tanhuiri.cn:19527/registration/bank',
+          url: 'http://127.0.0.1:19527/registration/bank',
           method: 'POST',
           // 请求体重发送的数据
           data: {

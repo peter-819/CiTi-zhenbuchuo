@@ -7,10 +7,10 @@
       <img src="static/HomePage/hleft.png" style="width: 40%;height:auto;position: absolute;left: 17px;top: 246px;">
       <img src="static/HomePage/hrightdown.png" style="width: 36%;height:auto;position: absolute;right: 0;top: 412px;">
 
-      <div style="text-align: center;width: 35%;height: auto">
-        <p style="color: #FFFFFF;font-size: 56px;font-weight: 400;letter-spacing: 10px;opacity: 0.9;">这里是我们的Slogan</p>
+      <div style="text-align: center;width: 50%;height: auto">
+        <p style="color: #FFFFFF;font-size: 56px;font-weight: 400;letter-spacing: 10px;opacity: 0.9;">为后疫情时代小微企业融资问题提供最温情的智能解决方案</p>
         <p style="color: #FFFFFF;font-size: 30px;font-weight: 400;letter-spacing: 5px;opacity: 0.65;margin-top: 36px;">
-          后疫情时代中小企业信贷系统</p>
+          后疫情时代中小企业信用评级管理系统</p>
       </div>
 
       <div

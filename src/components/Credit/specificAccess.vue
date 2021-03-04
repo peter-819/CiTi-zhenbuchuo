@@ -80,9 +80,9 @@
         },
         getPolicy(item) {
           if (this.getSuffix(item) == '.jpg' || this.getSuffix(item) == '.png') {
-            return this.$ajax.get('http://host.tanhuiri.cn:19527/policy/image');
+            return this.$ajax.get('http://127.0.0.1:19527/policy/image');
           } else {
-            return this.$ajax.get('http://host.tanhuiri.cn:19527/policy/file');
+            return this.$ajax.get('http://127.0.0.1:19527/policy/file');
           }
         },
         submitUpload() {

@@ -2,7 +2,6 @@
   <div id="bankAside">
     <div>
       <div v-for="(item,index) in blockList" :class="selectedIndex===index ? clickedBC : defaultBC" @click="onclicked(index)">
-        <img :src="item.ImageSrc" style="height:66px;width:66px">
         <div :class="selectedIndex===index ? clickedCC : defaultCC">{{item.context}}</div>
       </div>
     </div>
@@ -15,14 +14,14 @@
   props:['selected'],
   data(){
     return {
-      selectedIndex:this.selected,
+      selectedIndex:this.selected || 0,
       clickedBC : 'clickedBlock',
       clickedCC : 'clickedContext',
       defaultBC : 'asideBlock',
       defaultCC : 'context',
       blockList : [
-        {context:'处理借贷事务', ImageSrc:'/static/CreditHomePage/lendRequire.png'},
-        {context:'企业社会网络', ImageSrc:'/static/CreditHomePage/network.png'},
+        {context:'静态交往关系网络', ImageSrc:'/static/CreditHomePage/lendRequire.png'},
+        {context:'动态资金流动网络', ImageSrc:'/static/CreditHomePage/network.png'},
       ]
     }
   },
@@ -37,7 +36,7 @@
 
 <style scoped>
   #bankAside{
-    width: 345px;
+    width: 350px;
     height: 160px;
     display: flex;
     flex-direction: column;
@@ -47,7 +46,7 @@
     background-color: #F5F6FA;
   }
   .context{
-    width: 150px;
+    width: 180px;
     height: 80px;
     font-size: 20px;
     font-family: Source Han Sans CN;
@@ -71,7 +70,7 @@
     line-height: 77px;
   }
   .clickedContext{
-    width: 150px;
+    width: 180px;
     height: 80px;
     font-size: 20px;
     font-family: Source Han Sans CN;

@@ -1,6 +1,9 @@
 <template>
   <div id="all">
-    <heading style="background-color: rgb(74,73,76);" v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}"></heading>
+    <heading
+      style="background-color:#49484B;"
+      v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}" :activated="1">
+    </heading>
     <bank-l-r-aside v-model:selected="selected" @select="selectedIndexChange"></bank-l-r-aside>
     <div :is="forms[selected]"></div>
   </div>
@@ -10,19 +13,21 @@
   import heading from "../components/heading.vue"
   import bankLRAside from "../components/bankCredit/bankLRAside.vue"
   import bankLRinfo from "../components/bankCredit/bankLRinfo.vue"
-  import Network from "../components/bankCredit/Network.vue"
+  import SocialNetwork from "../components/bankCredit/SocialNetwork.vue"
+  import KnowledgeGraph from "../components/bankCredit/KnowledgeGraph";
   export default{
   	name :"bankLendRequire",
   	components: {
   	  bankLRAside,
       heading,
       bankLRinfo,
-      Network,
+      SocialNetwork,
+      KnowledgeGraph
   	},
     data() {
       return {
         selected: 0,
-        forms: ['bankLRinfo','Network'],
+        forms: ['KnowledgeGraph','SocialNetwork'],
 
       }
     },

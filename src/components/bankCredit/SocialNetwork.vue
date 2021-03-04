@@ -1,8 +1,5 @@
 <template>
   <div class="main">
-    <div class="search">
-      <el-input  v-model="search_key" placeholder="   搜索企业名称" id="searchinput"></el-input>
-    </div>
     <div class="container">
         <charts></charts>
     </div>
@@ -28,18 +25,6 @@
     flex-direction: column;
     align-items: center;
     width:100%;
-  }
-  .search{
-    width:100%;
-    height:58px;
-    margin-top: 40px;
-  }
-  #searchinput{
-    width:21%;
-    height:58px;
-    margin-left: 48%;
-    border: 2px solid #2CB8B9;
-    border-radius: 31px;
   }
   .container{
     width: 1365px;

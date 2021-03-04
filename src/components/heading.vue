@@ -17,8 +17,9 @@
       let this_ = this
       return {
         cols: [
-          {span: 2, context: "名字", offset: 1, func:function(){
-            this_.$router.push({path:'/'})
+          {span: 2, context: "针不戳", offset: 1, func:function(){
+            this_.$router.push({path:'/'});
+            location.reload()
           }},
           {span: 2, context: "首页", offset: 9, func:function () {
               this_.$router.push({path:'/'})

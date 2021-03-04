@@ -12,7 +12,12 @@
 <script>
   export default {
     name: "creditAside",
-    props:['selected'],
+    props:{
+      selected: {
+        type: Number,
+        default: 0
+      }
+    },
     data(){
       return {
         selectedIndex:this.selected,
@@ -34,6 +39,9 @@
         this.$emit('select',index);
         this.selectedIndex = index;
       }
+    },
+    mounted() {
+      console.log(this.selected)
     }
   }
 </script>

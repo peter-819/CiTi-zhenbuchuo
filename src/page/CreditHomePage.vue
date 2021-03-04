@@ -2,7 +2,7 @@
   <div id="CreditHomePage" class="bg">
     <heading
       style="background-color:#49484B;"
-      v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}">
+      v-bind:credit="{sty1:'font-weight:500; color: #2CB8B9;',sty2:''}" :activated="1">
     </heading>
     <credit-aside v-model:selected="selected" @select="selectedIndexChange"></credit-aside>
     <div :is="forms[selected]"></div>
@@ -39,6 +39,9 @@
       selectedIndexChange: function (index) {
         this.selected = index;
       }
+    },
+    mounted() {
+      this.selected = 0;
     }
   }
 
